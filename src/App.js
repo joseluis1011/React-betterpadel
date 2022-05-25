@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { Redirect, Route } from 'wouter';
 import Home from './Paginas/Home/Home';
 import Registro from './Paginas/Auth/Registro';
 import Login from './Paginas/Auth/Login';
+import Profile from './Componentes/Profile/Profile';
 import axios from 'axios';
 
 axios.defaults.headers.post['Content-type'] = 'application/json';
@@ -29,6 +29,10 @@ function App() {
       <Route
         path="/register">
         {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Registro />}
+      </Route>
+      <Route
+        component={Profile}
+        path="/profile">
       </Route>
     </div>
   );

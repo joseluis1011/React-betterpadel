@@ -27,7 +27,6 @@ function Login() {
             password: loginInput.password,
         }
 
-        axios.get('http://betterpadel.atwebpages.com/betterpadel/public/sanctum/csrf-cookie').then(response => {
             axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/login`, data).then(res => {
                 
                 if (res.data.status === 200) {
@@ -41,7 +40,7 @@ function Login() {
                     setLogin({ ...loginInput, error_list: res.data.validation_errors });
                 }
             });
-        });
+
     }
 
     return (

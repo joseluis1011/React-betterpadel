@@ -1,0 +1,19 @@
+
+    .img-move {
+    position: absolute;
+    }
+    .img-move-1 {
+    left: 60%;
+    bottom: 5%;
+    }
+    .img-move-2 {
+    right: 1%;
+    bottom: 1%;
+    }
+    .contenedor{
+        width: 80%;
+        align-items: center;
+    }
+    .foto{
+        height: 550px;
+    }

@@ -30,8 +30,7 @@ function Registro() {
             password: registerInput.password
         }
         
-        //axios.get('/sanctum/csrf-cookie').then(response => { });
-        axios.get('http://betterpadel.atwebpages.com/betterpadel/public/sanctum/csrf-cookie').then(response => {
+
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/register`, data).then(res => {
             if (res.data.status === 200) {
                 localStorage.setItem('auth_token',res.data.token);
@@ -42,7 +41,7 @@ function Registro() {
                 setRegister({...registerInput,error_list: res.data.validation_errors});
             }
         });
-        });
+
     }
 
     return (
