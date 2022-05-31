@@ -15,7 +15,7 @@ function Home() {
                 <div className="row">
 
                     <div className="col-12">
-                        <div className="row">
+                        <div className="row px-0">
 
 
                             <Carousel>
@@ -57,7 +57,7 @@ function Home() {
                             </Carousel>
                         </div>
                     </div>
-                    <div class="col-10 offset-1">
+                    <div className="col-10 offset-1 bg-dark">
                         <div className="row">
                             <div className="col-4 bg-dark">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas arcu non sapien blandit scelerisque. Mauris vel g
@@ -99,7 +99,7 @@ function Home() {
 
                         </div>
                     </div>
-                    <div class="col-8 offset-2 pt-3">
+                    <div className="col-8 offset-2 pt-3">
                         <div className="row">
                             <img src={foto} />
                         </div>

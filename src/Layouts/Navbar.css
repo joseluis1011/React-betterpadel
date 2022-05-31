@@ -1,0 +1,9 @@
+.puntero{
+    cursor:pointer;
+}
+.dark-background{
+    background-color: black;
+}
+.hover:hover{
+    background-color: yellow;
+}
