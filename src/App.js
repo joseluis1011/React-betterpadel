@@ -5,6 +5,9 @@ import Registro from './Paginas/Auth/Registro';
 import Login from './Paginas/Auth/Login';
 import Profile from './Componentes/Profile/Profile';
 import axios from 'axios';
+import Entrenamientos from './Paginas/Entrenamientos/Entrenamientos';
+import SobreNosotros from './Paginas/SobreNosotros/SobreNosotros';
+import MiPerfil from './Paginas/MiPerfil/MiPerfil';
 
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
@@ -33,6 +36,18 @@ function App() {
       <Route
         component={Profile}
         path="/profile">
+      </Route>
+      <Route
+        component={Entrenamientos}
+        path="/entrenamientos">
+      </Route>
+      <Route
+        component={SobreNosotros}
+        path="/SobreNosotros">
+      </Route>
+      <Route
+        component={MiPerfil}
+        path="/MiPerfil">
       </Route>
     </div>
   );

@@ -6,6 +6,10 @@ import swal from "sweetalert";
 import { Link } from "wouter";
 import logo from '../imagenes/logo.png';
 import './Navbar.css';
+import instagram from "../imagenes/Instagram.png";
+import twitter from "../imagenes/Twitter.png";
+import facebook from "../imagenes/facebook.png";
+import {Button} from "react-bootstrap";
 
 function Navbar() {
 
@@ -36,7 +40,7 @@ function Navbar() {
                     <div className="col-4">
                         <div className="row">
                             <Link className="nav-link" to="/Login">
-                                <button type="button" className="btn btn-light">Login</button>
+                                <Button color="#ff1616" >Login</Button>
                             </Link>
                         </div>
                     </div >
@@ -53,38 +57,80 @@ function Navbar() {
     } else {
         Botones = (
             <div className="col-12">
-                <div className="row">
-                    <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <a className="dropdown-item" href="#">Something else here</a>
+                <div className="row ">
+                    <div className="col-4">
+                        <div className="row">
+                            <Link className="nav-link" to="/MiPerfil">
+                                <button type="button" className="btn btn-light">Mi perfil</button>
+                            </Link>
                         </div>
-                    </div>
-                </div>
+                    </div >
 
+                </div>
             </div>
         );
     }
 
     return (
+        <div className="col-12">
+            <div className="row dark-background text-white justify-content-between align-items-center">
+                <div className="col-4">
+                    <div className="row">
+                        <Link to="/" >
+                            <img src={logo} alt="Logo" className="puntero" />
+                        </Link>
 
-        <div className="row dark-background text-white justify-content-between align-items-center">
-            <div className="col-4">
-                <div className="row">
-                    <Link to="/" >
-                        <img src={logo} className="puntero" />
-                    </Link>
+                    </div>
+                </div>
+                
+                <div className="col-2">
+                    <div className="row ">
+                        <div className="col-12">
+                                <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
+                                <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
+                                <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="col-12">
+                    <div className="row">
+                        <div className="col-6">
+                            <nav class="navbar sticky-top navbar-expand-sm dark-background text-white">
+                                <div className="col-4 offset-1">
+                                    <div className="row">
+                                        <Link to="/entrenamientos">
+                                            <h5 class="puntero encima">Entrenamientos</h5>
+                                        </Link>
+                                    </div>
+                                </div>
 
+                                <div className="col-4">
+                                    <div className="row">
+                                        <Link to="/">
+                                            <h5 class="puntero encima" href="#">Reservas</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                <div className="col-4">
+                                    <div className="row">
+                                        <Link to="/SobreNosotros">
+                                            <h5 class="puntero encima">Sobre Nosotros</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                            </nav>
+                        </div>
+                        <div className=" offset-4 col-2">
+                            <div className="row  justify-content-end">
+                                {Botones}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="col-2">
-                <div className="row ">
-                    {Botones}
-                </div>
+
             </div>
         </div>
     );

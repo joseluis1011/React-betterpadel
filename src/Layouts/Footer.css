@@ -1,0 +1,15 @@
+.dark-background{
+    background-color: black;
+}
+
+.red-background{
+    background-color: #ff1616;
+}
+
+.puntero{
+    cursor:pointer;
+}
+
+.encima:hover{
+    color: #ff1616;
+}

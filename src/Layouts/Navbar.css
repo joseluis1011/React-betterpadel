@@ -7,3 +7,19 @@
 .hover:hover{
     background-color: yellow;
 }
+
+.icono{
+    max-width: auto;
+    max-height: 40px;
+    padding-right: 4%;
+}
+
+.encima:hover{
+    color: #ff1616;
+}
+
+.red{
+    color: #ff1616;
+}
+
+
