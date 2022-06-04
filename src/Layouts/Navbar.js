@@ -13,7 +13,7 @@ import {Button} from "react-bootstrap";
 
 function Navbar() {
 
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
     const logout = (event) => {
         event.preventDefault();
@@ -23,7 +23,7 @@ function Navbar() {
                 localStorage.removeItem('auth_token');
                 localStorage.removeItem('auth_name');
                 swal("Success", res.data.message, "success");
-                navigate('/');
+                Navigate('/');
             } else if (res.data.status === 401) {
                 swal("Warning", res.data.message, "warning");
             }

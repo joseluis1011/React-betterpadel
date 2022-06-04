@@ -26,6 +26,10 @@ function App() {
         path="/">
       </Route>
       <Route
+        component={Pistas}
+        path="/pistas">
+      </Route>
+      <Route
         path="/Login">
         {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
       </Route>
