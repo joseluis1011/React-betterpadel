@@ -3,10 +3,12 @@ import Navbar from "../../Layouts/Navbar";
 import axios from "axios";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
+import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
 
 function Registro() {
 
     const navigate = useNavigate();
+    const [buscando, setBuscando] = useState(false);
 
 
     const [registerInput, setRegister] = useState({
@@ -30,6 +32,7 @@ function Registro() {
             password: registerInput.password
         }
         
+        setBuscando(true);
 
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/register`, data).then(res => {
             if (res.data.status === 200) {
@@ -40,6 +43,7 @@ function Registro() {
             }else{
                 setRegister({...registerInput,error_list: res.data.validation_errors});
             }
+            setBuscando(false);
         });
 
     }
@@ -73,7 +77,7 @@ function Registro() {
                                     </div>
 
                                     <div className="form-group mb-3">
-                                        <button type="submit" className="btn btn-primary">Register</button>
+                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-primary">Register</button>}
                                     </div>
                                 </form>
                             </div>

@@ -1,11 +1,36 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import swal from "sweetalert";
 import './Profile.css';
+import { getRegistros } from "../../Servicios/getRegistros";
+import AjaxLoader from "../AjaxLoader/AjaxLoader";
+import Post from "../Registro/Post";
 
 const Profile = () => {
     const Navigate = useNavigate();
+    const [historial, setHistorial] = useState([]);
+    const [buscando, setBuscando] = useState(false);
+
+    function obtenerHistorial() {
+
+        setBuscando(true);
+
+
+        getRegistros().then(registros => {
+            setHistorial(registros);
+
+            setBuscando(false);
+
+        });
+    }
+
+    useEffect(obtenerHistorial, []);
+
+    function muestraHistorial(post) {
+
+        return <Post key={post.id} post={post}></Post>;
+    }
 
     const [editarPerfil, setEditar] = useState({
         name: '',
@@ -101,6 +126,25 @@ const Profile = () => {
                 </div>
             </div>
             <button className="btn btn-danger" onClick={logout}>Logout</button>
+            {buscando ? <AjaxLoader></AjaxLoader>
+                : <div class="container">
+                <h2>Historial</h2>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Pista</th>
+                      <th>Día</th>
+                      <th>Mes</th>
+                      <th>Hora</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {historial.map(muestraHistorial)}
+                  </tbody>
+                </table>
+              </div>
+            }
+            
         </div>
     );
 

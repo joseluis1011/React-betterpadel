@@ -5,6 +5,7 @@ import Registro from './Paginas/Auth/Registro';
 import Login from './Paginas/Auth/Login';
 import Profile from './Componentes/Profile/Profile';
 import axios from 'axios';
+import Pistas from './Componentes/Pistas/Pistas';
 
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
@@ -21,6 +22,10 @@ function App() {
       <Route
         component={Home}
         path="/">
+      </Route>
+      <Route
+        component={Pistas}
+        path="/pistas">
       </Route>
       <Route
         path="/Login">

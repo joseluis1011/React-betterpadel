@@ -3,10 +3,12 @@ import Navbar from "../../Layouts/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import swal from "sweetalert";
+import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
 
 function Login() {
 
     const navigate = useNavigate();
+    const [buscando, setBuscando] = useState(false);
 
     const [loginInput, setLogin] = useState({
         email: '',
@@ -26,7 +28,8 @@ function Login() {
             email: loginInput.email,
             password: loginInput.password,
         }
-
+            setBuscando(true);
+            
             axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/login`, data).then(res => {
                 
                 if (res.data.status === 200) {
@@ -39,8 +42,9 @@ function Login() {
                 } else {
                     setLogin({ ...loginInput, error_list: res.data.validation_errors });
                 }
+                setBuscando(false);
             });
-
+            
     }
 
     return (
@@ -54,6 +58,7 @@ function Login() {
                                 <h4>Login</h4>
                             </div>
                             <div className="card-body">
+                                
                                 <form onSubmit={loginSubmit}>
                                     <div className="form-group mb-3">
                                         <label>Email</label>
@@ -66,7 +71,7 @@ function Login() {
                                         <span>{loginInput.error_list.password}</span>
                                     </div>
                                     <div className="form-group mb-3">
-                                        <button type="submit" className="btn btn-primary">Login</button>
+                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-primary">Login</button>}
                                     </div>
                                 </form>
                             </div>
