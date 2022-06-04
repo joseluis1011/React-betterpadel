@@ -8,12 +8,10 @@ const Pistas = () => {
     const [numeroPista, setNumeroPista] = useState();
     const [pista, setPista] = useState([]);
     const [value, onChange] = useState(new Date());
-    const [hora,setHora] = useState();
+    const [hora, setHora] = useState();
 
     const date = new Date();
     date.setDate(date.getDate() + 30);
-    let aux = 9;
-    let aux2 = 0;
     const [cerrado, setCerrado] = useState(true);
     function obtenerPista(value) {
         setCerrado(false);
@@ -24,7 +22,7 @@ const Pistas = () => {
 
     useEffect(botones, [pista]);
 
-    
+
 
     function abrirCalendar(event) {
 
@@ -36,7 +34,7 @@ const Pistas = () => {
         } else {
             document.getElementById("myForm").setAttribute("class", "d-none");
         }
-        
+
     }
 
     function abrirForm() {
@@ -50,7 +48,7 @@ const Pistas = () => {
         if (!cerrado) {
             abrirForm();
         }
-        
+
         const botonesHoras = document.getElementById("horas").querySelectorAll('button');
 
         for (let i = 0; i < botonesHoras.length; i++) {
@@ -61,31 +59,11 @@ const Pistas = () => {
             }
 
         }
-        
         for (let i = 0; i < pista.length; i++) {
-            console.log(pista[i].hora)
-            if (pista[i].hora.toString() === "09:00") {
-                console.log("kek")
-                document.getElementById(pista[i].hora.toString()).setAttribute("class", "btn-danger");
-                document.getElementById(pista[i].hora.toString()).disabled = true;
-            } else if (aux2 < 30 && pista[i].hora.toString() === aux + ":" + "0" + aux2) {    
-                document.getElementById(pista[i].hora.toString()).setAttribute("class", "btn-danger");
-                document.getElementById(pista[i].hora.toString()).disabled = true;
-                console.log("kek")
-
-            } else if (pista[i].hora.toString() === aux + ":" + aux2) {    
-                console.log("kek")
-
-                document.getElementById(pista[i].hora.toString()).setAttribute("class", "btn-danger");
-                document.getElementById(pista[i].hora.toString()).disabled = true;
-            }
-            aux = aux + 1;
-            aux2 = aux2 + 30;
-            if (aux2 === 60) {
-                aux = aux + 1;
-                aux2 = 0;
-            }
+            document.getElementById(pista[i].hora.toString()).setAttribute("class", "btn-danger");
+            document.getElementById(pista[i].hora.toString()).disabled = true;
         }
+
     }
 
     function test(event) {
@@ -99,21 +77,21 @@ const Pistas = () => {
 
     const enviarReserva = (event) => {
         event.preventDefault();
-       
+
         const data = {
             pista: numeroPista,
             dia: value.getDate(),
             mes: value.getMonth(),
-            hora:hora,
+            hora: hora,
         }
 
-            axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/store`, data).then(res => {
-                if (res.data.status === 200) {
-                    swal("Success", res.data.message, "success");
-                }else{
-                    console.log(res.data)
-                }
-            });        
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/store`, data).then(res => {
+            if (res.data.status === 200) {
+                swal("Success", res.data.message, "success");
+            } else {
+                console.log(res.data)
+            }
+        });
     }
 
     return (
@@ -159,19 +137,19 @@ const Pistas = () => {
                                 <form onSubmit={enviarReserva}>
                                     <div className="form-group mb-3">
                                         <label>Hora</label>
-                                        <input type="" name="hora" value={hora} className="form-control" disabled/>
+                                        <input type="" name="hora" value={hora} className="form-control" disabled />
                                     </div>
                                     <div className="form-group mb-3">
                                         <label>Día</label>
-                                        <input type="" name="dia" value={value.getDate()} className="form-control" disabled/>
+                                        <input type="" name="dia" value={value.getDate()} className="form-control" disabled />
                                     </div>
                                     <div className="form-group mb-3">
                                         <label>Mes</label>
-                                        <input type="" name="mes" value={value.getMonth()} className="form-control" disabled/>
+                                        <input type="" name="mes" value={value.getMonth()} className="form-control" disabled />
                                     </div>
                                     <div className="form-group mb-3">
                                         <label>Numero de Pista</label>
-                                        <input type="" name="pista" value={numeroPista} className="form-control" disabled/>
+                                        <input type="" name="pista" value={numeroPista} className="form-control" disabled />
                                     </div>
                                     <div className="form-group mb-3">
                                         <button type="submit" className="btn btn-primary">Reservar</button>

@@ -9,9 +9,9 @@ import Post from "../Registro/Post";
 
 const Profile = () => {
     const Navigate = useNavigate();
-    const [historial, setHistorial] = useState([]);
+    const [historial, setHistorial] = useState();
     const [buscando, setBuscando] = useState(false);
-
+    let array = [];
     function obtenerHistorial() {
 
         setBuscando(true);
@@ -139,7 +139,8 @@ const Profile = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {historial.map(muestraHistorial)}
+                    {historial}
+                    {/*historial.map(muestraHistorial)*/}
                   </tbody>
                 </table>
               </div>

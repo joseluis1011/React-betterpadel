@@ -24,8 +24,8 @@ function App() {
         path="/">
       </Route>
       <Route
-        component={Pistas}
         path="/pistas">
+          {!localStorage.getItem('auth_token') ? <Login/> : <Pistas/>}
       </Route>
       <Route
         path="/Login">
@@ -36,8 +36,8 @@ function App() {
         {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Registro />}
       </Route>
       <Route
-        component={Profile}
         path="/profile">
+          {!localStorage.getItem('auth_token') ? <Redirect to ='/'/>: <Profile/>}
       </Route>
     </div>
   );
