@@ -1,3 +1,6 @@
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
     .img-move {
     position: absolute;
@@ -16,4 +19,34 @@
     }
     .foto{
         height: 550px;
+    }
+
+    .foto2{
+        height: 50%;
+    }
+
+    .dark-background{
+        background-color: black;
+    }
+
+    .textorojo{
+        color: #FF1616;
+    }
+
+    .absolute{
+        position: absolute;
+        top: 1900px;
+        right: 317px;
+    }
+
+    .relative{
+        position: relative;
+    }
+
+    .debajo{
+        z-index: 1;
+    }
+
+    .encima{
+        z-index: 2;
     }

@@ -1,0 +1,24 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-background{
+    background-color: black;
+}
+
+.textorojo{
+    color: #FF1616;
+}
+
+.estiloflechas{
+    width: 3%;
+}
+
+.estiloflechas2{
+    width: 3%;
+    transform: rotate(180deg);
+}
+
+.botonrojo{
+    background-color: #FF1616;
+}
