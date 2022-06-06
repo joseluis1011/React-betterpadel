@@ -19,7 +19,7 @@ import galeria4 from "../../imagenes/Fotos wpt/paco7.jpg";
 function Home() {
 
     return (
-        <div>
+        <div className="">
             <Navbar />
             <div className="container px-0">
 
@@ -72,17 +72,17 @@ function Home() {
                         <div className="row text-center">
                             <div className="col-4 dark-background text-white pt-4">
                                 <img src={rayo} alt="Rayo"></img>
-                                <h3 className="text-center">Innovación</h3>
+                                <h3 className="text-center pt-2">Innovación</h3>
                                 <p>Creamos una nueva forma de entrenar. Queremos verte en lo más alto, atrévete a probar nuestra fórmula.</p>
                             </div>
                             <div className="col-4 bg-white text-black pt-4">
                                 <img src={martillo} alt="Martillo"></img>
-                                <h3 className="text-center textorojo">Trabajo</h3>
+                                <h3 className="text-center textorojo pt-2">Trabajo</h3>
                                 <p>Quién algo quiere, algo le cuesta. Te aseguramos que tu esfuerzo merecerá la pena.</p>
                             </div>
                             <div className="col-4 dark-background text-white pt-4">
                                 <img src={corazon} alt="Corazón"></img>
-                                <h3 className="text-center">Pasión</h3>
+                                <h3 className="text-center pt-2">Pasión</h3>
                                 <p>Todo es más sencillo cuando algo te encanta, y por eso haremos que te guste aún más este deporte.</p>
                             </div>
 
@@ -98,10 +98,10 @@ function Home() {
                                 </div>
                             </div>
                             <div className="col-6 align-self-center">
-                                <h1 className="textorojo">Entrenamientos</h1>
-                                <h4>Traemos un nuevo método de trabajo, con el que buscamos exprimir al máximo tus capacidades con el objetivo de que juegues de tú a tú con tus ídolos.</h4>
-                                <Link className="nav-link" to="/Login">
-                                    <button type="button" className="btn btn-dark">Más información</button>
+                                <h1 className="textorojo pb-4">Entrenamientos</h1>
+                                <h4 className="pb-4">Traemos un nuevo método de trabajo, con el que buscamos exprimir al máximo tus capacidades con el objetivo de que juegues de tú a tú con tus ídolos.</h4>
+                                <Link className="nav-link" to="/entrenamientos">
+                                    <button type="button" className="btn btn-lg btn-dark custom-btn">Más información</button>
                                 </Link>
                             </div>
 
@@ -112,10 +112,10 @@ function Home() {
 
                         <div className="row">
                             <div className="col-6 align-self-center">
-                                <h1 className="textorojo">Reserva de pistas</h1>
-                                <h4>Queremos formar parte de tu pasión por el pádel. Para ello te ofrecemos nuestras instalaciones y nuestras pistas para que los disfrutes como quieras.</h4>
+                                <h1 className="textorojo pb-4">Reserva de pistas</h1>
+                                <h4 className="pb-4">Queremos formar parte de tu pasión por el pádel. Para ello te ofrecemos nuestras instalaciones y nuestras pistas para que los disfrutes como quieras.</h4>
                                 <Link className="nav-link" to="/Login">
-                                    <button type="button" className="btn btn-light">Reserva</button>
+                                    <button type="button" className="btn btn-lg btn-light custom-btn">Reserva de pistas</button>
                                 </Link>
                             </div>
                             <div className="col-6">
@@ -131,7 +131,7 @@ function Home() {
                         <div className="row">
                             <div className="col-3">
                                 <div className="row">
-                                    <img src={galeria1} alt="Galeria1" className="foto2" />
+                                    <img src={galeria3} alt="Galeria3" className="foto2" />
                                 </div>
                             </div>
                             <div className="col-3">
@@ -141,7 +141,7 @@ function Home() {
                             </div>
                             <div className="col-3">
                                 <div className="row">
-                                    <img src={galeria3} alt="Galeria3" className="foto2" />
+                                    <img src={galeria1} alt="Galeria1" className="foto2" />
                                 </div>
                             </div>
                             <div className="col-3">

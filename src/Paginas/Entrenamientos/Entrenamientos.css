@@ -19,6 +19,8 @@
     transform: rotate(180deg);
 }
 
-.botonrojo{
-    background-color: #FF1616;
+.btn-light.custom-btn{
+    background-color: #ff1616;
+    border-color: #ff1616;
+    color: white;
 }

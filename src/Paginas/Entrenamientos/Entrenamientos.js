@@ -139,9 +139,6 @@ function Entrenamientos() {
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label className="text-white">Email</Form.Label>
                                     <Form.Control type="email" placeholder="Introduce tu email" />
-                                    <Form.Text className="text-muted">
-                                        We'll never share your email with anyone else.
-                                    </Form.Text>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -150,9 +147,7 @@ function Entrenamientos() {
                                 </Form.Group>
 
                                 
-                                <Button type="submit" className="botonrojo">
-                                    Enviar
-                                </Button>
+                                <button type="button" className="btn btn-light custom-btn">Enviar</button>
                             </Form>
                         </div>
                     </div>
