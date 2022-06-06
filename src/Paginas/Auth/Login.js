@@ -29,12 +29,11 @@ function Login() {
             password: loginInput.password,
         }
             setBuscando(true);
-            
+
             axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/login`, data).then(res => {
                 
                 if (res.data.status === 200) {
                     localStorage.setItem('auth_token', res.data.token);
-                    localStorage.setItem('auth_name', res.data.username);
                     swal("Success", res.data.message, "success");
                     navigate('/');
                 } else if (res.data.status === 401) {
