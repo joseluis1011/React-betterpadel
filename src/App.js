@@ -8,6 +8,7 @@ import axios from 'axios';
 import Entrenamientos from './Paginas/Entrenamientos/Entrenamientos';
 import SobreNosotros from './Paginas/SobreNosotros/SobreNosotros';
 import MiPerfil from './Paginas/MiPerfil/MiPerfil';
+import Pistas from './Componentes/Pistas/Pistas';
 
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';

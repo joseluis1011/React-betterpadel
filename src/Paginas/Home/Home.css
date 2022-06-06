@@ -13,6 +13,9 @@
     right: 1%;
     bottom: 1%;
     }
+    .container2{
+        width: 1600px;
+    }
     .contenedor{
         width: 80%;
         align-items: center;
@@ -33,20 +36,14 @@
         color: #FF1616;
     }
 
-    .absolute{
-        position: absolute;
-        top: 1900px;
-        right: 317px;
+    .btn-light.custom-btn{
+        background-color: #ff1616;
+        border-color: #ff1616;
+        color: white;
     }
 
-    .relative{
-        position: relative;
-    }
-
-    .debajo{
-        z-index: 1;
-    }
-
-    .encima{
-        z-index: 2;
+    .btn-dark.custom-btn{
+        background-color: #ff1616;
+        border-color: #ff1616;
+        color: white;
     }

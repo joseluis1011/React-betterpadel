@@ -37,17 +37,17 @@ function Navbar() {
         Botones = (
             <div className="col-12">
                 <div className="row ">
-                    <div className="col-4">
+                    <div className="col-5">
                         <div className="row">
                             <Link className="nav-link" to="/Login">
-                                <Button color="#ff1616" >Login</Button>
+                                <button type="button" className="btn btn-light custom-btn">Iniciar sesión</button>
                             </Link>
                         </div>
                     </div >
-                    <div className="col-4 offset-1">
+                    <div className="col-5 offset-1">
                         <div className="row ">
                             <Link className="nav-link" to="/register">
-                                <button type="button" className="btn btn-light">Register</button>
+                                <button type="button" className="btn btn-light custom-btn">Registro</button>
                             </Link>
                         </div>
                     </div >
@@ -61,7 +61,7 @@ function Navbar() {
                     <div className="col-4">
                         <div className="row">
                             <Link className="nav-link" to="/MiPerfil">
-                                <button type="button" className="btn btn-light">Mi perfil</button>
+                                <button type="button" className="btn btn-light custom-btn">Mi perfil</button>
                             </Link>
                         </div>
                     </div >
@@ -73,26 +73,32 @@ function Navbar() {
 
     return (
         <div className="col-12">
-            <div className="row dark-background text-white justify-content-between align-items-center">
-                <div className="col-4">
-                    <div className="row">
-                        <Link to="/" >
-                            <img src={logo} alt="Logo" className="puntero" />
-                        </Link>
+            <div className="row dark-background text-white align-items-center">
+                
+                <div className="col-12 ">
+                    <div className="row align-items-center">
+
+                        <div className="col-4">
+                            <div className="row">
+                                <Link to="/" >
+                                    <img src={logo} alt="Logo" className="puntero" />
+                                </Link>
+
+                            </div>
+                        </div>
+
+                        <div className="col-3 offset-5">
+                            <div className="row">
+                                <div className="col-12 justify-content-end">
+                                    <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
+                                    <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
+                                    <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-                
-                <div className="col-2">
-                    <div className="row ">
-                        <div className="col-12">
-                                <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
-                                <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
-                                <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
-                        </div>
-                    </div>
-                </div>
-                
                 <div className="col-12">
                     <div className="row">
                         <div className="col-6">
