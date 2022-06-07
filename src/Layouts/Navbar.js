@@ -87,18 +87,24 @@ function Navbar() {
                             </div>
                         </div>
 
-                        <div className="col-3 offset-5">
+                        <div className="col-8 pr-4">
                             <div className="row">
-                                <div className="col-12 justify-content-end">
-                                    <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
-                                    <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
-                                    <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
+                                <div className="col-12">
+                                    <div className="row">
+                                        <div className=" offset-10 col-2">
+                                            <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
+                                            <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
+                                            <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
+                
                 <div className="col-12">
                     <div className="row">
                         <div className="col-6">
