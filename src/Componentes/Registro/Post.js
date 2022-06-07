@@ -2,7 +2,6 @@ import React from 'react';
 
 const Post = (props) => {
     return (
-
         <tr>
             <td>{props.post.pista}</td>
             <td>{props.post.dia}</td>

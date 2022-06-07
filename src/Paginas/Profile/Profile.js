@@ -109,8 +109,9 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className="fixed-bottom">
-                <Footer />
+            <div className="fixed-bottom ">
+                    <Footer />
+
             </div>
             
         </div>

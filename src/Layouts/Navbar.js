@@ -113,11 +113,11 @@ function Navbar() {
                 <div className="col-12 sticky-top top-0 dark-background text-white">
                     <div className="row">
                         <div className="col-6">
-                            <nav class="navbar sticky-top navbar-expand-sm dark-background text-white">
+                            <nav className="navbar sticky-top navbar-expand-sm dark-background text-white">
                                 <div className="col-4 offset-1">
                                     <div className="row">
                                         <Link to="/entrenamientos">
-                                            <h5 class="puntero encima">Entrenamientos</h5>
+                                            <h5 className="puntero encima">Entrenamientos</h5>
                                         </Link>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@ function Navbar() {
                                 <div className="col-4">
                                     <div className="row">
                                         <Link to="/">
-                                            <h5 class="puntero encima" href="#">Reservas</h5>
+                                            <h5 className="puntero encima" href="#">Reservas</h5>
                                         </Link>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@ function Navbar() {
                                 <div className="col-4">
                                     <div className="row">
                                         <Link to="/SobreNosotros">
-                                            <h5 class="puntero encima">Sobre Nosotros</h5>
+                                            <h5 className="puntero encima">Sobre Nosotros</h5>
                                         </Link>
                                     </div>
                                 </div>

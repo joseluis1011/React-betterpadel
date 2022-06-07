@@ -4,6 +4,12 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Navbar from '../../Layouts/Navbar';
+import Footer from '../../Layouts/Footer';
+import PistaAzul from '../../imagenes/Pista azul.png';
+import PistaNegra from '../../imagenes/Pista negra.png';
+import './Pistas.css';
+
 const Pistas = () => {
     const [numeroPista, setNumeroPista] = useState();
     const [pista, setPista] = useState([]);
@@ -96,13 +102,32 @@ const Pistas = () => {
 
     return (
         <div>
+            <Navbar />
             <div className="d-none" id="myForm">
                 <Calendar onChange={onChange} value={value} onClickDay={obtenerPista} minDate={new Date()} maxDate={date} />
             </div>
+            <div className="container">
+                <div className="col-12 pt-4">
+                    <div className="row">
+                        <div className="col-4">
+                            <img src={PistaAzul} className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        </div>
+                        <div className="col-4">
+                            <img src={PistaAzul} className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        </div>
+                        <div className="col-4">
+                            <img src={PistaAzul} className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        </div>
+                        <div className="col-2 offset-2 pt-4">
+                            <img src={PistaNegra} className="pistas" alt="Pista negra" onClick={abrirCalendar} />
+                        </div>
+                        <div className="col-2 offset-2 pt-4">
+                            <img src={PistaAzul} className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <button className="btn" value="1" onClick={abrirCalendar}>Pista 1</button>
-            <button className="btn" value="2" onClick={abrirCalendar}>Pista 2</button>
-            <button className="btn" value="3" onClick={abrirCalendar}>Pista 3</button>
             <div className="container py-5 form-popup d-none" id="myform2">
                 <div className="row justify-content-center">
                     <div className="col-md-6">
@@ -159,6 +184,9 @@ const Pistas = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="pt-4">
+                <Footer />
             </div>
         </div>
     );
