@@ -1,7 +1,6 @@
 import Navbar from "../../Layouts/Navbar";
 import './SobreNosotros.css';
 import Footer from "../../Layouts/Footer";
-import { Link } from "wouter";
 import galeria4 from "../../imagenes/Rayoedit.png";
 import galeria3 from "../../imagenes/Romaedit.png";
 import galeria2 from "../../imagenes/Cuqui1.jpg";
