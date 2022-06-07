@@ -114,7 +114,7 @@ function Home() {
                             <div className="col-6 align-self-center">
                                 <h1 className="textorojo pb-4">Reserva de pistas</h1>
                                 <h4 className="pb-4">Queremos formar parte de tu pasión por el pádel. Para ello te ofrecemos nuestras instalaciones y nuestras pistas para que los disfrutes como quieras.</h4>
-                                <Link className="nav-link" to="/Login">
+                                <Link className="nav-link" to="/reservas">
                                     <button type="button" className="btn btn-lg btn-light custom-btn">Reserva de pistas</button>
                                 </Link>
                             </div>

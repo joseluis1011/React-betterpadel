@@ -192,20 +192,83 @@ const Pistas = () => {
             <div className="container">
                 <div className="col-12 pt-4">
                     <div className="row">
-                        <div className="col-4">
-                            <img src={PistaAzul} id="5" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="5" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 3</h5></div>
                         </div>
-                        <div className="col-4">
-                            <img src={PistaAzul} id="4" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="4" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 4</h5></div>
                         </div>
-                        <div className="col-4">
-                            <img src={PistaAzul} id="3" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="3" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 5</h5></div>
                         </div>
-                        <div className="col-2 offset-2 pt-4">
+                        <div className="col-2 offset-2 pt-4 conTexto puntero bk2">
                             <img src={PistaNegra} id="1" className="pistas" alt="Pista negra" onClick={abrirCalendar} />
+                            <div className="textoEncima2"><h5>Pista 1</h5></div>
                         </div>
-                        <div className="col-2 offset-2 pt-4">
+                        <div className="col-2 offset-2 pt-4 conTexto puntero bk">
                             <img src={PistaAzul} id="2" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima2"><h5>Pista 2</h5></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container py-5 form-popup d-none" id="myform2">
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <div className="card">
+                            <div className="card-header">
+                                <h4>Pista {numeroPista} para el día {value.getDate()}</h4>
+                            </div>
+                            <div className="card-body" id="horas">
+                                <button id="09:00" className="btn-success" onClick={test}>09:00</button>
+                                <button id="10:30" className="btn-success" onClick={test}>10:30</button>
+                                <button id="12:00" className="btn-success" onClick={test}>12:00</button>
+                                <button id="13:30" className="btn-success" onClick={test}>13:30</button>
+                                <button id="15:00" className="btn-success" onClick={test}>15:00</button>
+                                <button id="16:30" className="btn-success" onClick={test}>16:30</button>
+                                <button id="18:00" className="btn-success" onClick={test}>18:00</button>
+                                <button id="19:30" className="btn-success" onClick={test}>19:30</button>
+                                <button id="21:00" className="btn-success" onClick={test}>21:00</button>
+                                <button id="22:30" className="btn-success" onClick={test}>22:30</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container py-5 form-popup" id="myForm3">
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <div className="card">
+                            <div className="card-header">
+                                <h4>Reserva</h4>
+                            </div>
+                            <div className="card-body">
+                                <form onSubmit={enviarReserva}>
+                                    <div className="form-group mb-3">
+                                        <label>Hora</label>
+                                        <input type="" name="hora" value={hora} className="form-control" disabled />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <label>Día</label>
+                                        <input type="" name="dia" value={value.getDate()} className="form-control" disabled />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <label>Mes</label>
+                                        <input type="" name="mes" value={value.getMonth()} className="form-control" disabled />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <label>Numero de Pista</label>
+                                        <input type="" name="pista" value={numeroPista} className="form-control" disabled />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <button type="submit" className="btn btn-primary">Reservar</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

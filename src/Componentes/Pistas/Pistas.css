@@ -2,3 +2,40 @@
     width: 400px;
     height: 300px;
 }
+
+.conTexto{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.textoEncima{
+    position: absolute;
+    top: 45%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.textoEncima2{
+    position: absolute;
+    top: 43%;
+    left: 46%;
+    color: white;
+}
+
+.puntero{
+    cursor:pointer;
+}
+
+.bk{
+    background: none;
+}
+
+.bk:hover{
+    filter: grayscale(100%) brightness(60%) sepia(90%) hue-rotate(-50deg) saturate(800%) contrast(1); 
+}
+
+.bk2:hover{
+    filter: grayscale(100%) brightness(150%) contrast(0.6);
+}

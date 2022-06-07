@@ -61,7 +61,7 @@ function Navbar() {
         Botones = (
             <div className="col-12">
                 <div className="row ">
-                    <div className="col-4">
+                    <div className="offset-5 col-4">
                         <div className="row">
                             <Link className="nav-link" to="/profile">
                                 <button type="button" className="btn btn-light custom-btn" >Perfil</button>
@@ -124,8 +124,8 @@ function Navbar() {
 
                                 <div className="col-4">
                                     <div className="row">
-                                        <Link to="/">
-                                            <h5 className="puntero encima" href="#">Reservas</h5>
+                                        <Link to="/reservas">
+                                            <h5 className="puntero encima">Reservas</h5>
                                         </Link>
                                     </div>
                                 </div>
