@@ -9,7 +9,7 @@ import './Navbar.css';
 import instagram from "../imagenes/Instagram.png";
 import twitter from "../imagenes/Twitter.png";
 import facebook from "../imagenes/facebook.png";
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function Navbar() {
 
@@ -21,16 +21,19 @@ function Navbar() {
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/logout`).then(res => {
             if (res.data.status === 200) {
                 localStorage.removeItem('auth_token');
-                localStorage.removeItem('auth_name');
-                swal("Success", res.data.message, "success");
-                Navigate('/');
+                swal({
+                    title: "Succes", text: res.data.message, type:
+                        "success",
+                    icon: "success"
+                }).then(function () {
+                    Navigate('/');
+                    window.location.reload();
+                });
             } else if (res.data.status === 401) {
                 swal("Warning", res.data.message, "warning");
             }
         });
     }
-
-
     let Botones = '';
 
     if (localStorage.getItem('auth_token') === null) {
@@ -60,8 +63,8 @@ function Navbar() {
                 <div className="row ">
                     <div className="col-4">
                         <div className="row">
-                            <Link className="nav-link" to="/MiPerfil">
-                                <button type="button" className="btn btn-light custom-btn">Mi perfil</button>
+                            <Link className="nav-link" to="/profile">
+                                <button type="button" className="btn btn-light custom-btn" >Perfil</button>
                             </Link>
                         </div>
                     </div >
@@ -71,10 +74,11 @@ function Navbar() {
         );
     }
 
+
     return (
         <div className="col-12">
             <div className="row dark-background text-white align-items-center">
-                
+
                 <div className="col-12 ">
                     <div className="row align-items-center">
 
@@ -99,7 +103,9 @@ function Navbar() {
 
                     </div>
                 </div>
-                <div className="col-12">
+
+
+                <div className="col-12 sticky-top top-0 dark-background text-white">
                     <div className="row">
                         <div className="col-6">
                             <nav class="navbar sticky-top navbar-expand-sm dark-background text-white">
@@ -136,7 +142,6 @@ function Navbar() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

@@ -29,11 +29,20 @@ const EditarPerfil = () => {
 
             axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/editarperfil`, data).then(res => {
                 if (res.data.status === 200) {
-                    swal("Success", res.data.message, "success");
+                    swal({
+                        title: "Succes", text: res.data.message, type:
+                            "success",
+                        icon: "success"
+                    }).then(function () {
+                        window.location.reload();
+                    });
                 } else {
                     setEditar({ ...editarPerfil, error_list: res.data.validation_errors });
                 }
+                console.log(res);
             });
+            
+
             document.getElementById("myForm").style.display = "none";
         }
     }
@@ -53,10 +62,10 @@ const EditarPerfil = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="card">
-                            <div className="card-header">
+                            <div className="card-header text-dark">
                                 <h4>Editar Perfil</h4>
                             </div>
-                            <div className="card-body">
+                            <div className="card-body ">
                                 <form onSubmit={editarSubmit}>
                                     <div className="form-group mb-3">
                                         <label>Nombre</label>

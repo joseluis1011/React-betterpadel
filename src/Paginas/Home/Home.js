@@ -19,7 +19,7 @@ import galeria4 from "../../imagenes/Fotos wpt/paco7.jpg";
 function Home() {
 
     return (
-        <div className="">
+        <div>
             <Navbar />
             <div className="container px-0">
 

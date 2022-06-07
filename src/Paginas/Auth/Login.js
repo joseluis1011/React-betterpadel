@@ -28,24 +28,29 @@ function Login() {
             email: loginInput.email,
             password: loginInput.password,
         }
-            setBuscando(true);
+        setBuscando(true);
 
-            axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/login`, data).then(res => {
-                
-                if (res.data.status === 200) {
-                    localStorage.setItem('auth_token', res.data.token);
-                    swal("Success", res.data.message, "success");
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/login`, data).then(res => {
+
+            if (res.data.status === 200) {
+                localStorage.setItem('auth_token', res.data.token);
+                swal({
+                    title: "Succes", text: res.data.message, type:
+                        "success",
+                    icon: "success"
+                }).then(function () {
+                    window.location.reload();
                     navigate('/');
-                } else if (res.data.status === 401) {
-                    swal("Warning", res.data.message, "warning");
-                } else {
-                    setLogin({ ...loginInput, error_list: res.data.validation_errors });
-                }
-                setBuscando(false);
-            });
-            
-    }
+                });
+            } else if (res.data.status === 401) {
+                swal("Warning", res.data.message, "warning");
+            } else {
+                setLogin({ ...loginInput, error_list: res.data.validation_errors });
+            }
+            setBuscando(false);
+        });
 
+    }
     return (
         <div>
             <Navbar />
@@ -57,7 +62,7 @@ function Login() {
                                 <h4>Login</h4>
                             </div>
                             <div className="card-body">
-                                
+
                                 <form onSubmit={loginSubmit}>
                                     <div className="form-group mb-3">
                                         <label>Email</label>
@@ -70,7 +75,7 @@ function Login() {
                                         <span>{loginInput.error_list.password}</span>
                                     </div>
                                     <div className="form-group mb-3">
-                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-primary">Login</button>}
+                                        {buscando ? <AjaxLoader /> : <button type="submit" className="btn btn-primary">Login</button>}
                                     </div>
                                 </form>
                             </div>

@@ -133,7 +133,7 @@ function Entrenamientos() {
                             <Form>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label className="text-white">Nombre</Form.Label>
-                                    <Form.Control type="email" placeholder="Introduce tu nombre" />
+                                    <Form.Control type="name" placeholder="Introduce tu nombre" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
