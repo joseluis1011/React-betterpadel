@@ -192,20 +192,25 @@ const Pistas = () => {
             <div className="container">
                 <div className="col-12 pt-4">
                     <div className="row">
-                        <div className="col-4">
-                            <img src={PistaAzul} id="5" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="5" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 5</h5></div>
                         </div>
-                        <div className="col-4">
-                            <img src={PistaAzul} id="4" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="4" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 4</h5></div>
                         </div>
-                        <div className="col-4">
-                            <img src={PistaAzul} id="3" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto">
+                            <img src={PistaAzul} id="3" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 3</h5></div>
                         </div>
-                        <div className="col-2 offset-2 pt-4">
-                            <img src={PistaNegra} id="1" className="pistas" alt="Pista negra" onClick={abrirCalendar} />
+                        <div className="col-4 offset-2 conTexto pt-4 ">
+                            <img src={PistaNegra} id="1" className="pistas puntero bk2" alt="Pista negra" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 1</h5></div>
                         </div>
-                        <div className="col-2 offset-2 pt-4">
-                            <img src={PistaAzul} id="2" className="pistas" alt="Pista azul" onClick={abrirCalendar} />
+                        <div className="col-4 conTexto pt-4 ">
+                            <img src={PistaAzul} id="2" className="pistas puntero bk" alt="Pista azul" onClick={abrirCalendar} />
+                            <div className="textoEncima"><h5>Pista 2</h5></div>
                         </div>
                     </div>
                 </div>
