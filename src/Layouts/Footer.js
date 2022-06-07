@@ -20,7 +20,7 @@ function Footer() {
                 </div>
                 <div className="col-2 offset-1">
                     <div className="row pt-4">
-                    <Link to="/" >
+                    <Link to="/reservas" >
                         <h5 className='puntero encima'>Reservas</h5>
                     </Link>
                         

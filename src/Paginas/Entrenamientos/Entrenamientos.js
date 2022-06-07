@@ -4,7 +4,6 @@ import Footer from "../../Layouts/Footer";
 import entreno2 from "../../imagenes/Fotos wpt/paco11.jpg";
 import entreno1 from "../../imagenes/Fotos wpt/din5.jpg";
 import entreno3 from "../../imagenes/Fotos wpt/ruiz7.jpg";
-import { Link } from "wouter";
 import galeria1 from "../../imagenes/Fotos wpt/din9.jpg";
 import galeria2 from "../../imagenes/Fotos wpt/ari2.jpg";
 import galeria3 from "../../imagenes/Fotos wpt/ale4.jpg";

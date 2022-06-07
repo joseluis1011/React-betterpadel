@@ -1,10 +1,10 @@
 import Navbar from "../../Layouts/Navbar";
 import './SobreNosotros.css';
 import Footer from "../../Layouts/Footer";
-import { Link } from "wouter";
-import galeria1 from "../../imagenes/Rayoedit.png";
-import galeria2 from "../../imagenes/Romaedit.png";
-import galeria3 from "../../imagenes/Fotos wpt/ale4.jpg";
+import galeria4 from "../../imagenes/Rayoedit.png";
+import galeria3 from "../../imagenes/Romaedit.png";
+import galeria2 from "../../imagenes/Cuqui1.jpg";
+import galeria1 from "../../imagenes/Loky2.jpg";
 
 function SobreNosotros() {
 
@@ -54,25 +54,29 @@ function SobreNosotros() {
                             <div className="col-3">
                                 <div className="row">
                                     <img src={galeria1} alt="Equipo1" className="fotoequipo" />
-                                    <h3 className="textorojo text-center pt-2 pb-2">Rayo</h3>
-                                    <p className="text-white text-center">El cabecilla del centro, experto en entrenamientos y rutinas de ejercicios.</p>
+                                    <h3 className="textorojo text-center pt-2 pb-2">Loky</h3>
+                                    <p className="text-white text-center">El cerebro de la planificación, controla la web y juega a partes iguales.</p>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="row">
                                     <img src={galeria2} alt="Equipo2" className="foto2" />
+                                    <h3 className="textorojo text-center pt-2 pb-2">Cuqui</h3>
+                                    <p className="text-white text-center">La más pequeña y la encargada de cuidar a todos los jugadores del centro.</p>
+                                </div>
+                            </div>
+                            <div className="col-3">
+                                <div className="row">
+                                    <img src={galeria3} alt="Equipo3" className="foto2" />
                                     <h3 className="textorojo text-center pt-2 pb-2">Roma</h3>
-                                    <p className="text-white text-center">La más pequeña y juguetona del grupo, nuestra recogepelotas más rápida.</p>
+                                    <p className="text-white text-center">La más joven y juguetona del grupo, nuestra recogepelotas más rápida.</p>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="row">
-                                    <img src={galeria2} alt="Equipo3" className="foto2" />
-                                </div>
-                            </div>
-                            <div className="col-3">
-                                <div className="row">
-                                    <img src={galeria1} alt="Equipo4" className="foto2" />
+                                    <img src={galeria4} alt="Equipo4" className="foto2" />
+                                    <h3 className="textorojo text-center pt-2 pb-2">Rayo</h3>
+                                    <p className="text-white text-center">El cabecilla del centro, experto en entrenamientos y rutinas de ejercicios.</p>
                                 </div>
                             </div>
                         </div>
