@@ -32,3 +32,12 @@
 .boton{
     white-space: normal;
 }
+
+.margen{
+    margin: auto;
+}
+
+li{
+    padding-left: 50px;
+}
+

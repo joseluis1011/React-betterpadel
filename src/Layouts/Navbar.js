@@ -76,7 +76,8 @@ function Navbar() {
 
 
     return (
-        <div className="col-12">
+        
+        <div className="col-12 margen">
             <div className="row dark-background text-white align-items-center">
 
                 <div className="col-12 ">
@@ -109,6 +110,31 @@ function Navbar() {
                     </div>
                 </div>
 
+                <nav class="navbar navbar-expand-md dark-background navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <Link to="/entrenamientos">
+                                    <h5 className="puntero encima">Entrenamientos</h5>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/reservas">
+                                    <h5 className="puntero encima">Reservas</h5>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/SobreNosotros">
+                                    <h5 className="puntero encima">Sobre Nosotros</h5>
+                                </Link>
+                            </li>
+                                {Botones}
+                        </ul>
+                    </div>
+                </nav>
 
                 <div className="col-12 sticky-top top-0 dark-background text-white">
                     <div className="row">
