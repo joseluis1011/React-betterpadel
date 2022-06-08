@@ -34,7 +34,7 @@ function Registro() {
         
         setBuscando(true);
 
-        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/register`, data).then(res => {
+        axios.post(`https://betterpadel.vercel.app/public/api/register`, data).then(res => {
             if (res.data.status === 200) {
                 localStorage.setItem('auth_token',res.data.token);
                 swal({
