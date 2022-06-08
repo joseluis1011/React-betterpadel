@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/betterpadelreact/static/css/main.653a1f88.css",
+    "main.js": "/betterpadelreact/static/js/main.c601d3d9.js",
+    "static/js/787.5480e000.chunk.js": "/betterpadelreact/static/js/787.5480e000.chunk.js",
+    "static/media/fondo11negro.png": "/betterpadelreact/static/media/fondo11negro.9b52768f8b8cf2c1bc49.png",
+    "static/media/Rayoedit.png": "/betterpadelreact/static/media/Rayoedit.f4a31b1aab13c635dd77.png",
+    "static/media/Romaedit.png": "/betterpadelreact/static/media/Romaedit.42edb4adbf26081d18a5.png",
+    "static/media/composicion.png": "/betterpadelreact/static/media/composicion.4205d22036b330725466.png",
+    "static/media/ruiz7.jpg": "/betterpadelreact/static/media/ruiz7.08be928505e201684618.jpg",
+    "static/media/ale12rec.png": "/betterpadelreact/static/media/ale12rec.f90c62f44d02ea89b963.png",
+    "static/media/fondo10.jpg": "/betterpadelreact/static/media/fondo10.5b2ec5b6c851e5b42281.jpg",
+    "static/media/Loky2.jpg": "/betterpadelreact/static/media/Loky2.d2ecb5e3a459e7dfa1dc.jpg",
+    "static/media/Cuqui1.jpg": "/betterpadelreact/static/media/Cuqui1.36dcf0156c8d4c25d8af.jpg",
+    "static/media/din3.jpg": "/betterpadelreact/static/media/din3.2ad8b644dc3ce647831d.jpg",
+    "static/media/marta1.jpg": "/betterpadelreact/static/media/marta1.ce4e6abcfecbcda353b2.jpg",
+    "static/media/ale4.jpg": "/betterpadelreact/static/media/ale4.b778cf883b5ac09c0b01.jpg",
+    "static/media/din5.jpg": "/betterpadelreact/static/media/din5.0279ed0ea7ea70512f43.jpg",
+    "static/media/ari2.jpg": "/betterpadelreact/static/media/ari2.f57a9594bac7cd69c7bb.jpg",
+    "static/media/Reload.gif": "/betterpadelreact/static/media/Reload.a1062867ed0ca99c2233.gif",
+    "static/media/din9.jpg": "/betterpadelreact/static/media/din9.f5a787907544a62c78bc.jpg",
+    "static/media/paco7.jpg": "/betterpadelreact/static/media/paco7.ebf2f5f64ddda423e914.jpg",
+    "static/media/paco11.jpg": "/betterpadelreact/static/media/paco11.4f8e3d887c2249176154.jpg",
+    "static/media/ale13.jpg": "/betterpadelreact/static/media/ale13.a7dd0fe6a47bad4c941f.jpg",
+    "static/media/salazar2.jpg": "/betterpadelreact/static/media/salazar2.38491dcb4786b4f4f82c.jpg",
+    "static/media/din6.jpg": "/betterpadelreact/static/media/din6.ee64db795fd2a8704b8f.jpg",
+    "static/media/Instagram.png": "/betterpadelreact/static/media/Instagram.e719d8b29f452a16302d.png",
+    "static/media/logo.png": "/betterpadelreact/static/media/logo.c62143bd755f912f22a1.png",
+    "static/media/Twitter.png": "/betterpadelreact/static/media/Twitter.894988327f8d68209e91.png",
+    "index.html": "/betterpadelreact/index.html",
+    "main.653a1f88.css.map": "/betterpadelreact/static/css/main.653a1f88.css.map",
+    "main.c601d3d9.js.map": "/betterpadelreact/static/js/main.c601d3d9.js.map",
+    "787.5480e000.chunk.js.map": "/betterpadelreact/static/js/787.5480e000.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.653a1f88.css",
+    "static/js/main.c601d3d9.js"
+  ]
+}
