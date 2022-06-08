@@ -76,32 +76,103 @@ function Navbar() {
 
 
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-0 pb-0">
-            <a class="navbar-brand" href="#"><img src={logo} /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav sm-icons">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                </ul>
+        
+        <nav className="col-12 margen">
+            <div className="row dark-background text-white align-items-center">
+
+                <div className="col-12 ">
+                    <div className="row align-items-center">
+
+                        <div className="col-4">
+                            <div className="row">
+                                <Link to="/" >
+                                    <img src={logo} alt="Logo" className="puntero" />
+                                </Link>
+
+                            </div>
+                        </div>
+
+                        <div className="col-8 pr-4">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="row">
+                                        <div className=" offset-10 col-2">
+                                            <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
+                                            <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
+                                            <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-md dark-background navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <Link to="/entrenamientos">
+                                    <h5 className="puntero encima">Entrenamientos</h5>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/reservas">
+                                    <h5 className="puntero encima">Reservas</h5>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/SobreNosotros">
+                                    <h5 className="puntero encima">Sobre Nosotros</h5>
+                                </Link>
+                            </li>
+                                {Botones}
+                        </ul>
+                    </div>
+                </nav>
+
+                <div className="col-12 sticky-top top-0 dark-background text-white">
+                    <div className="row">
+                        <div className="col-6">
+                            <nav className="navbar sticky-top navbar-expand-sm dark-background text-white">
+                                <div className="col-4 offset-1">
+                                    <div className="row">
+                                        <Link to="/entrenamientos">
+                                            <h5 className="puntero encima">Entrenamientos</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                <div className="col-4">
+                                    <div className="row">
+                                        <Link to="/reservas">
+                                            <h5 className="puntero encima">Reservas</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                <div className="col-4">
+                                    <div className="row">
+                                        <Link to="/SobreNosotros">
+                                            <h5 className="puntero encima">Sobre Nosotros</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                            </nav>
+                        </div>
+                        <div className=" offset-4 col-2">
+                            <div className="row  justify-content-end">
+                                {Botones}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>)
 }
