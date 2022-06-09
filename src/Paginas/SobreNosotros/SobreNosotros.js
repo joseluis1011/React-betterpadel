@@ -55,28 +55,28 @@ function SobreNosotros() {
                                 <div className="row">
                                     <img src={galeria1} alt="Equipo1" className="fotoequipo" />
                                     <h3 className="textorojo text-center pt-2 pb-2">Loky</h3>
-                                    <p className="text-white text-center">El cerebro de la planificación, controla la web y juega a partes iguales.</p>
+                                    <h5 className="text-white text-center">El cerebro de la planificación, controla la web y juega a partes iguales.</h5>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="row">
                                     <img src={galeria2} alt="Equipo2" className="foto2" />
                                     <h3 className="textorojo text-center pt-2 pb-2">Cuqui</h3>
-                                    <p className="text-white text-center">La más pequeña y la encargada de cuidar a todos los jugadores del centro.</p>
+                                    <h5 className="text-white text-center">La más pequeña y la encargada de cuidar a todos los jugadores del centro.</h5>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="row">
                                     <img src={galeria3} alt="Equipo3" className="foto2" />
                                     <h3 className="textorojo text-center pt-2 pb-2">Roma</h3>
-                                    <p className="text-white text-center">La más joven y juguetona del grupo, nuestra recogepelotas más rápida.</p>
+                                    <h5 className="text-white text-center">La más joven y juguetona del grupo, nuestra recogepelotas más rápida.</h5>
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="row">
                                     <img src={galeria4} alt="Equipo4" className="foto2" />
                                     <h3 className="textorojo text-center pt-2 pb-2">Rayo</h3>
-                                    <p className="text-white text-center">El cabecilla del centro, experto en entrenamientos y rutinas de ejercicios.</p>
+                                    <h5 className="text-white text-center">El cabecilla del centro, experto en entrenamientos y rutinas de ejercicios.</h5>
                                 </div>
                             </div>
                         </div>

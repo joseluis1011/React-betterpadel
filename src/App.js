@@ -8,6 +8,7 @@ import axios from 'axios';
 import Entrenamientos from './Paginas/Entrenamientos/Entrenamientos';
 import SobreNosotros from './Paginas/SobreNosotros/SobreNosotros';
 import Pistas from './Componentes/Pistas/Pistas';
+import Torneos from './Paginas/Torneos/Torneos';
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -47,6 +48,10 @@ function App() {
       <Route
         component={SobreNosotros}
         path="/SobreNosotros">
+      </Route>
+      <Route
+        component={Torneos}
+        path="/Torneos">
       </Route>
     </div>
   );

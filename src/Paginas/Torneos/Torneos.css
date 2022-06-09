@@ -1,0 +1,32 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-background{
+    background-color: black;
+}
+
+.textorojo{
+    color: #FF1616;
+}
+
+.estiloflechas{
+    width: 3%;
+}
+
+.estiloflechas2{
+    width: 3%;
+    transform: rotate(180deg);
+}
+
+.btn-light.custom-btn{
+    background-color: #ff1616;
+    border-color: #ff1616;
+    color: white;
+}
+
+.btn-dark.custom-btn{
+    background-color: #ff1616;
+    border-color: #ff1616;
+    color: white;
+}
