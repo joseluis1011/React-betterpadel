@@ -36,12 +36,12 @@ function Entrenamientos() {
                     <div className="col-12 pt-4 pb-4">
 
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <div className="row">
                                     <img src={entreno1} alt="Entreno1" className="foto2" />
                                 </div>
                             </div>
-                            <div className="col-6 align-self-center">
+                            <div className="col-12 col-md-6 align-self-center">
                                 <h1 className="textorojo">Técnica</h1>
                                 <h5>Golpear la pelota de la forma más adecuada en cada golpe distinto es diferencial a la hora de ganar puntos. Aprende a manejar cada situación de la mejor manera posible.
                                     Saques, remates, víboras, dejadas, globos, y un sinfín de golpes a dominar te esperan para ampliar tu catálogo de movimientos en la pista.
@@ -54,12 +54,12 @@ function Entrenamientos() {
                     <div className="col-12 pt-4 pb-4 dark-background text-white">
 
                         <div className="row">
-                            <div className="col-6 align-self-center">
+                            <div className="col-12 col-md-6 align-self-center">
                                 <h1 className="textorojo">Posicionamiento</h1>
                                 <h5>La colocación dentro de la pista es crucial a la hora de realizar golpes complicados o hacer menos esfuerzos. Para realizar un buen resto, hacer una volea ganadora,
                                     saltar hacia un remate o devolverlo, es muy importante estar bien posicionado. La colocación en pista te hará ganar ventaja respecto a tus rivales.</h5>
                             </div>
-                            <div className="col-6">
+                            <div className="d-none d-lg-block col-6">
                                 <div className="row">
                                     <img src={entreno2} alt="Entreno2" className="foto2" />
                                 </div>
@@ -70,12 +70,12 @@ function Entrenamientos() {
                     <div className="col-12 pt-4 pb-4">
 
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <div className="row">
                                     <img src={entreno3} alt="Entreno3" className="foto2" />
                                 </div>
                             </div>
-                            <div className="col-6 align-self-center">
+                            <div className="col-12 col-md-6 align-self-center">
                                 <h1 className="textorojo">Trabajo</h1>
                                 <h5>No hay éxito sin sacrificio. Los partidos son largos y siempre hay altibajos, pero la clave está en seguir trabajando con esfuerzo.
                                     Lucha cada bola como si fuera la última y consigue dar tu mejor versión en la pista.</h5>
