@@ -59,18 +59,11 @@ function Navbar() {
         );
     } else {
         Botones = (
-            <div className="col-12">
-                <div className="row ">
-                    <div className="offset-5 col-4">
-                        <div className="row">
-                            <Link className="nav-link" to="/profile">
-                                <button type="button" className="btn btn-light custom-btn" >Perfil</button>
-                            </Link>
-                        </div>
-                    </div >
 
-                </div>
-            </div>
+                            <Link className="nav-link" to="/profile">
+                                <button type="button" className="btn btn-light custom-btn derecha">Perfil</button>
+                            </Link>
+
         );
     }
 
@@ -110,31 +103,40 @@ function Navbar() {
                     </div>
                 </div>
 
-                <nav class="navbar navbar-expand-md dark-background navbar-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <Link to="/entrenamientos">
-                                    <h5 className="puntero encima">Entrenamientos</h5>
-                                </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to="/reservas">
-                                    <h5 className="puntero encima">Reservas</h5>
-                                </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to="/SobreNosotros">
-                                    <h5 className="puntero encima">Sobre Nosotros</h5>
-                                </Link>
-                            </li>
-                                {Botones}
-                        </ul>
-                    </div>
-                </nav>
+
+                        <nav className="navbar navbar-expand-md dark-background navbar-dark">
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                        <Link to="/entrenamientos">
+                                            <h5 className="puntero encima">Entrenamientos</h5>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/reservas">
+                                            <h5 className="puntero encima">Reservas</h5>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/SobreNosotros">
+                                            <h5 className="puntero encima">Sobre Nosotros</h5>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/Torneos">
+                                            <h5 className="puntero encima">Torneos</h5>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item derecha">
+                                        {Botones}
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+
 
                 <div className="col-12 sticky-top top-0 dark-background text-white">
                     <div className="row">

@@ -19,8 +19,15 @@ import galeria4 from "../../imagenes/Fotos wpt/paco7.jpg";
 function Home() {
 
     return (
-        <div>
-            <Navbar />
+        <div className="fluid-container">
+
+
+            <div className="col-12 px-0">
+                <div className="row">
+                    <Navbar />
+                </div>
+            </div>
+            
             <div className="container px-0">
 
                 <div className="row pb-4">
