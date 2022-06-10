@@ -56,7 +56,7 @@ function Navbar() {
         );
     } else {
         Botones = (               
-            <div className="col-12 col-md-5 offset-1">
+            <div className="col-12 col-md-5 offset-md-1">
                 <div className="row ">
                     <Link className="nav-link" to="/profile">
                         <button type="button" className="btn btn-light custom-btn">Perfil</button>
@@ -141,7 +141,7 @@ function Navbar() {
                             </nav>
                         </div>
                         <div className="col-12 col-md-2 offset-md-4 ">
-                            <div className="row izq">
+                            <div className="row">
                                 {Botones}
                             </div>
                         </div>
