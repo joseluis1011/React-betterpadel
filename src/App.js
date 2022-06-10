@@ -9,6 +9,7 @@ import Entrenamientos from './Paginas/Entrenamientos/Entrenamientos';
 import SobreNosotros from './Paginas/SobreNosotros/SobreNosotros';
 import Pistas from './Componentes/Pistas/Pistas';
 import Torneos from './Paginas/Torneos/Torneos';
+import Dashboard from './Paginas/Dashboard/Dashboard';
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -22,12 +23,16 @@ function App() {
   return (
     <div className='contenido'>
       <Route
+        component={Dashboard}
+        path="/Dashboard">
+      </Route>
+      <Route
         component={Home}
         path="/">
       </Route>
       <Route
         path="/reservas">
-          {!localStorage.getItem('auth_token') ? <Login/> : <Pistas/>}
+        {!localStorage.getItem('auth_token') ? <Login /> : <Pistas />}
       </Route>
       <Route
         path="/Login">
@@ -39,7 +44,7 @@ function App() {
       </Route>
       <Route
         path="/profile">
-          {!localStorage.getItem('auth_token') ? <Login/>: <Profile/>}
+        {!localStorage.getItem('auth_token') ? <Login /> : <Profile />}
       </Route>
       <Route
         component={Entrenamientos}
@@ -53,7 +58,7 @@ function App() {
         component={Torneos}
         path="/Torneos">
       </Route>
-    </div>
+    </div >
   );
 }
 

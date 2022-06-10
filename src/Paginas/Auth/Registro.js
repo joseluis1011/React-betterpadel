@@ -15,6 +15,7 @@ function Registro() {
         name: '',
         email: '',
         password: '',
+        telefono:'',
         error_list: [],
     });
 
@@ -29,12 +30,13 @@ function Registro() {
         const data = {
             name: registerInput.name,
             email: registerInput.email,
-            password: registerInput.password
+            password: registerInput.password,
+            telefono: registerInput.telefono,
         }
         
         setBuscando(true);
 
-        axios.post(`https://betterpadel.vercel.app/public/api/register`, data).then(res => {
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/register`, data).then(res => {
             if (res.data.status === 200) {
                 localStorage.setItem('auth_token',res.data.token);
                 swal({
@@ -71,8 +73,13 @@ function Registro() {
                                         <span>{registerInput.error_list.name}</span>
                                     </div>
                                     <div className="form-group mb-3">
+                                        <label>Teléfono</label>
+                                        <input type="" name="telefono" onChange={handleInput} value={registerInput.telefono} className="form-control" />
+                                        <span>{registerInput.error_list.telefono}</span>
+                                    </div>
+                                    <div className="form-group mb-3">
                                         <label>Email</label>
-                                        <input type="" name="email" onChange={handleInput} value={registerInput.email} className="form-control" />
+                                        <input type="email" name="email" onChange={handleInput} value={registerInput.email} className="form-control" />
                                         <span>{registerInput.error_list.email}</span>
                                     </div>
                                     <div className="form-group mb-3">

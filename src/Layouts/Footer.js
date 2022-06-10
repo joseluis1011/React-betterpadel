@@ -13,7 +13,7 @@ function Footer() {
                 <div className="col-2 offset-1">
                     <div className="row pt-4">
                     <Link to="/entrenamientos" >
-                        <h5 className='puntero encima'>Entrenamientos</h5>
+                        <h5 className='puntero encima '>Entrenamientos</h5>
                     </Link>
 
                     </div>
@@ -21,7 +21,7 @@ function Footer() {
                 <div className="col-2 offset-1">
                     <div className="row pt-4">
                     <Link to="/reservas" >
-                        <h5 className='puntero encima'>Reservas</h5>
+                        <h5 className='puntero encima '>Reservas</h5>
                     </Link>
                         
                     </div>

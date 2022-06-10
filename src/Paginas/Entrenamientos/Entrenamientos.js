@@ -8,8 +8,57 @@ import galeria1 from "../../imagenes/Fotos wpt/din9.jpg";
 import galeria2 from "../../imagenes/Fotos wpt/ari2.jpg";
 import galeria3 from "../../imagenes/Fotos wpt/ale4.jpg";
 import flechas from "../../imagenes/flechas.png";
+import { useState } from "react";
+import axios from "axios";
+import swal from "sweetalert";
 
 function Entrenamientos() {
+    const [buscando, setBuscando] = useState(false);
+
+
+    const [mensajeInput, setMensaje] = useState({
+        name: '',
+        email: '',
+        mensaje: '',
+        error_list: [],
+    });
+
+    const handleInput = (event) => {
+        event.persist();
+        setMensaje({ ...mensajeInput, [event.target.name]: event.target.value });
+    }
+
+    const mensajeSubmit = (event) => {
+        event.preventDefault();
+
+        const data = {
+            name: mensajeInput.name,
+            email: mensajeInput.email,
+            mensaje: mensajeInput.mensaje
+        }
+        
+        setBuscando(true);
+
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/mensajes`, data).then(res => {
+            if (res.data.status === 200) {
+                swal({
+                    title: "Succes", text: res.data.message, type:
+                        "success",
+                    icon: "success"
+                });
+                setMensaje(
+                    {name: '',
+                    email: '',
+                    mensaje: '',
+                    error_list: []})
+            }else{
+                setMensaje({...mensajeInput,error_list: res.data.validation_errors});
+                swal("Warning", res.data.message, "warning");
+            }
+            setBuscando(false);
+        });
+
+    }
 
     return (
         <div>
@@ -126,21 +175,21 @@ function Entrenamientos() {
                             <h1 className="textorojo text-center">Nosotros ponemos el contexto, tú eres el protagonista</h1>
                             <h3 className="text-white text-center">Si te atreves a vivir esta experiencia o necesitas más información, contacta con nosotros</h3>
 
-                            <form className="text-white">
+                            <form className="text-white" onSubmit={mensajeSubmit}>
                                 <div className="form-group mb-3">
                                     <label>Nombre</label>
-                                    <input type="" name="name" placeholder="Introduce tu nombre" className="form-control" />
-                                    <span>{}</span>
+                                    <input type="" name="name" placeholder="Introduce tu nombre" onChange={handleInput} value={mensajeInput.name} className="form-control" />
+                                    <span>{mensajeInput.error_list.name}</span>
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Email</label>
-                                    <input type="" name="email" placeholder="Introduce tu email" className="form-control" />
-                                    <span>{}</span>
+                                    <input type="email" name="email" onChange={handleInput} value={mensajeInput.email} placeholder="Introduce tu email" className="form-control" />
+                                    <span>{mensajeInput.error_list.name}</span>
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Mensaje</label>
-                                    <textarea rows="3" name="mensaje" className="form-control" />
-                                    <span>{}</span>
+                                    <textarea rows="3" name="mensaje" onChange={handleInput} value={mensajeInput.mensaje} className="form-control" />
+                                    <span>{mensajeInput.error_list.mensaje}</span>
                                 </div>
                                 <div className="form-group mb-3">
                                     <button type="submit" className="btn btn-light custom-btn">Enviar</button>

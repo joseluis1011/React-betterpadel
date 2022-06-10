@@ -103,10 +103,18 @@ const Pistas = () => {
             mes: value.getMonth(),
             hora: hora,
         }
-
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/store`, data).then(res => {
             if (res.data.status === 200) {
-                swal("Success", res.data.message, "success");
+
+                swal({
+                    title: "Succes", text: res.data.message, type:
+                        "success",
+                    icon: "success"
+                }).then(function () {
+                    document.getElementById("myForm3").setAttribute("class", "d-none");
+                    setShow(false);
+
+                });
             } else {
                 console.log(res.data)
             }

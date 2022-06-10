@@ -5,8 +5,28 @@ import entreno2 from "../../imagenes/Fotos wpt/paco11.jpg";
 import entreno1 from "../../imagenes/Fotos wpt/din5.jpg";
 import entreno3 from "../../imagenes/Fotos wpt/ruiz7.jpg";
 import flechas from "../../imagenes/flechas.png";
+import { getTorneos } from "../../Servicios/getTorneos";
+import { useEffect, useState } from "react";
+import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
+import Torneo from "../../Componentes/Torneo/Torneo";
 
 function Torneos() {
+    const [buscando, setBuscando] = useState(false);
+    const [torneos, setTorneos] = useState([]);
+
+    function obtenerTorneos() {
+        setBuscando(true);
+        getTorneos().then(torneos => {
+            setTorneos(torneos);
+            setBuscando(false);
+        });
+        
+    }
+    function muestraTorneo(torneo) {
+        console.log(torneo);
+        return <Torneo key={torneo.id} torneo={torneo}></Torneo>
+    }
+    useEffect(obtenerTorneos, []);
 
     return (
         <div>
@@ -27,8 +47,9 @@ function Torneos() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="col-12 pt-4 pb-4">
+                    {buscando ? <AjaxLoader></AjaxLoader>
+                                    :torneos.map(muestraTorneo)}
+                    {/*<div className="col-12 pt-4 pb-4">
 
                         <div className="row">
                             <div className="col-6">
@@ -82,7 +103,7 @@ function Torneos() {
                             </div>
 
                         </div>
-                    </div>
+                    </div>*/}
 
                 </div>
 

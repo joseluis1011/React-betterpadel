@@ -24,13 +24,12 @@ export default function InfoModal() {
   const [editarPerfil, setEditar] = useState({
     name: '',
     password: '',
-    edad: '',
+    lado: '',
     telefono: '',
     error_list: [],
   });
 
-  const edadTest = /^[1-9]{1}\d{1}$/;
-  const telefonoTest = /^\d{9}$/ ;
+  const telefonoTest = /^\d{9}$/;
   const nombreTest = /^[a-zA-Z ]{8,251}$/
   const passwordTest = /^\S{7,18}$/
 
@@ -39,20 +38,19 @@ export default function InfoModal() {
     const data = {
       name: editarPerfil.name,
       password: editarPerfil.password,
-      edad: editarPerfil.edad,
+      lado: editarPerfil.lado,
       telefono: editarPerfil.telefono,
-  }
-    if (editarPerfil.name === "" && editarPerfil.password === "" && editarPerfil.edad === "" && editarPerfil.telefono === "") {
+    }
+    console.log(editarPerfil.lado)
+    if (editarPerfil.name === "" && editarPerfil.password === "" && editarPerfil.lado === "" && editarPerfil.telefono === "") {
       swal("Warning", "Los datos estan vacíos", "warning");
-    } else if (editarPerfil.edad !== '' && !edadTest.test(editarPerfil.edad)) {
-      swal("Warning", "Introduzca una edad Válida", "warning");
-    }else if (editarPerfil.telefono !== ''&& !telefonoTest.test(editarPerfil.telefono)) {
+    } else if (editarPerfil.telefono !== '' && !telefonoTest.test(editarPerfil.telefono)) {
       swal("Warning", "Introduzca un teléfono válido (666666666)", "warning");
-    }else if(editarPerfil.name !== ''&& !nombreTest.test(editarPerfil.name)){
+    } else if (editarPerfil.name !== '' && !nombreTest.test(editarPerfil.name)) {
       swal("Warning", "Introduzca un nombre con almenos 8 letras", "warning");
-    }else if(editarPerfil.password !== ''&& !passwordTest.test(editarPerfil.password)){
+    } else if (editarPerfil.password !== '' && !passwordTest.test(editarPerfil.password)) {
       swal("Warning", "Introduzca un nombre con almenos 7 carácteres y como máximo 18", "warning");
-    }else{
+    } else {
 
       axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/editarperfil`, data).then(res => {
         console.log(res.data);
@@ -94,9 +92,12 @@ export default function InfoModal() {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Edad</Form.Label>
-              <Form.Control
-                onChange={e => setEditar({ ...editarPerfil, edad: e.target.value })} />
+              <Form.Label>Lado Bueno</Form.Label>
+              <Form.Select defaultValue="" onChange={e => setEditar({ ...editarPerfil, lado: e.target.value })}>
+              <option></option>
+                <option value="Izquierda">Izquierda</option>
+                <option value="Derecha">Derecha</option>
+              </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Número de teléfono</Form.Label>

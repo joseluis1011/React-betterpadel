@@ -112,22 +112,22 @@ function Navbar() {
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
                                         <Link to="/entrenamientos">
-                                            <h5 className="puntero encima">Entrenamientos</h5>
+                                            <h5 className="puntero encima ">Entrenamientos</h5>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to="/reservas">
-                                            <h5 className="puntero encima">Reservas</h5>
+                                            <h5 className="puntero encima ">Reservas</h5>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to="/SobreNosotros">
-                                            <h5 className="puntero encima">Sobre Nosotros</h5>
+                                            <h5 className="puntero encima ">Sobre Nosotros</h5>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to="/Torneos">
-                                            <h5 className="puntero encima">Torneos</h5>
+                                            <h5 className="puntero encima ">Torneos</h5>
                                         </Link>
                                     </li>
                                     <li className="nav-item derecha">
@@ -153,7 +153,7 @@ function Navbar() {
                                 <div className="col-4">
                                     <div className="row">
                                         <Link to="/reservas">
-                                            <h5 className="puntero encima">Reservas</h5>
+                                            <h5 className="puntero encima ">Reservas</h5>
                                         </Link>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@ function Navbar() {
                                 <div className="col-4">
                                     <div className="row">
                                         <Link to="/SobreNosotros">
-                                            <h5 className="puntero encima">Sobre Nosotros</h5>
+                                            <h5 className="puntero encima ">Sobre Nosotros</h5>
                                         </Link>
                                     </div>
                                 </div>
