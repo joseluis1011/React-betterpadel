@@ -37,10 +37,6 @@
     margin: auto;
 }
 
-li{
-    padding-left: 50px;
-}
-
-.derecha{
-    float: right;
+.espacio{
+    padding-left: 20px;
 }

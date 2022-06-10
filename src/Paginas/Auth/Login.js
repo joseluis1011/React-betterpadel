@@ -75,7 +75,7 @@ function Login() {
                                         <span>{loginInput.error_list.password}</span>
                                     </div>
                                     <div className="form-group mb-3">
-                                        {buscando ? <AjaxLoader /> : <button type="submit" className="btn btn-primary">Login</button>}
+                                        {buscando ? <AjaxLoader /> : <button type="submit" className="btn btn-dark custom-btn">Login</button>}
                                     </div>
                                 </form>
                             </div>

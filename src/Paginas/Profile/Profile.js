@@ -84,7 +84,7 @@ const Profile = () => {
                             <div className="col-4 dark-background text-white pt-4 pb-4">
                                 {datosPerfil}
                                 <InfoModal />
-                                <button className="btn btn-danger" onClick={logout}>Logout</button>
+                                <button className="btn btn-dark custom-btn" onClick={logout}>Logout</button>
                             </div>
                             <div className="col-8">
                                 {buscando ? <AjaxLoader></AjaxLoader>

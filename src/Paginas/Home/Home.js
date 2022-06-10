@@ -99,12 +99,12 @@ function Home() {
                     <div className="col-12 pt-4 pb-4">
 
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <div className="row">
                                     <img src={entreno} alt="Entrenamientos" className="foto2" />
                                 </div>
                             </div>
-                            <div className="col-6 align-self-center">
+                            <div className="col-12 col-md-6 align-self-center">
                                 <h1 className="textorojo pb-4">Entrenamientos</h1>
                                 <h4 className="pb-4">Traemos un nuevo método de trabajo, con el que buscamos exprimir al máximo tus capacidades con el objetivo de que juegues de tú a tú con tus ídolos.</h4>
                                 <Link className="nav-link" to="/entrenamientos">
@@ -118,14 +118,14 @@ function Home() {
                     <div className="col-12 pt-4 dark-background text-white pb-4">
 
                         <div className="row">
-                            <div className="col-6 align-self-center">
+                            <div className="col-12 col-md-6 align-self-center">
                                 <h1 className="textorojo pb-4">Reserva de pistas</h1>
                                 <h4 className="pb-4">Queremos formar parte de tu pasión por el pádel. Para ello te ofrecemos nuestras instalaciones y nuestras pistas para que los disfrutes como quieras.</h4>
                                 <Link className="nav-link" to="/reservas">
                                     <button type="button" className="btn btn-lg btn-light custom-btn">Reserva de pistas</button>
                                 </Link>
                             </div>
-                            <div className="col-6">
+                            <div className="d-none d-lg-block col-6">
                                 <div className="row">
                                     <img src={composicion} alt="Composición reservas" className="foto" />
                                 </div>

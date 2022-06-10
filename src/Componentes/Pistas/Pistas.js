@@ -185,7 +185,7 @@ const Pistas = () => {
                                                     <input type="" name="pista" value={numeroPista} className="form-control" disabled />
                                                 </div>
                                                 <div className="form-group mb-3">
-                                                    <button type="submit" className="btn btn-primary">Reservar</button>
+                                                    <button type="submit" className="btn btn-dark custom-btn">Reservar</button>
                                                 </div>
                                             </form>
                                         </div>

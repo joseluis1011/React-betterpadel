@@ -1,6 +1,4 @@
-import Dropdown from "@restart/ui/esm/Dropdown";
 import axios from "axios";
-import { DropdownButton } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import swal from "sweetalert";
 import { Link } from "wouter";
@@ -9,7 +7,6 @@ import './Navbar.css';
 import instagram from "../imagenes/Instagram.png";
 import twitter from "../imagenes/Twitter.png";
 import facebook from "../imagenes/facebook.png";
-import { Button } from "react-bootstrap";
 
 function Navbar() {
 
@@ -40,14 +37,14 @@ function Navbar() {
         Botones = (
             <div className="col-12">
                 <div className="row ">
-                    <div className="col-5">
+                    <div className="col-12 col-md-5">
                         <div className="row">
                             <Link className="nav-link" to="/Login">
                                 <button type="button" className="btn btn-light custom-btn">Iniciar sesión</button>
                             </Link>
                         </div>
                     </div >
-                    <div className="col-5 offset-1">
+                    <div className="col-12 offset-md-1 col-md-5">
                         <div className="row ">
                             <Link className="nav-link" to="/register">
                                 <button type="button" className="btn btn-light custom-btn">Registro</button>
@@ -58,25 +55,27 @@ function Navbar() {
             </div>
         );
     } else {
-        Botones = (
-
-                            <Link className="nav-link" to="/profile">
-                                <button type="button" className="btn btn-light custom-btn derecha">Perfil</button>
-                            </Link>
-
+        Botones = (               
+            <div className="col-12 col-md-5 offset-md-1">
+                <div className="row ">
+                    <Link className="nav-link" to="/profile">
+                        <button type="button" className="btn btn-light custom-btn">Perfil</button>
+                    </Link>
+                </div>
+            </div>
         );
     }
 
 
     return (
-        
-        <nav className="col-12 margen">
+
+        <div className="col-12 margen">
             <div className="row dark-background text-white align-items-center">
 
                 <div className="col-12 ">
                     <div className="row align-items-center">
 
-                        <div className="col-4">
+                        <div className="col-12 col-md-4">
                             <div className="row">
                                 <Link to="/" >
                                     <img src={logo} alt="Logo" className="puntero" />
@@ -89,7 +88,7 @@ function Navbar() {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="row">
-                                        <div className=" offset-10 col-2">
+                                        <div className="d-none d-lg-block offset-10 col-md-2">
                                             <a href="https://instagram.com/betterpadelct"><img src={instagram} alt="Instagram" className="icono"></img></a>
                                             <a href="https://twitter.com/betterpadel"><img src={twitter} alt="Twitter" className="icono"></img></a>
                                             <a href="https://facebook.com/profile.php?id=100081966279989"><img src={facebook} alt="Facebook" className="icono"></img></a>
@@ -103,46 +102,11 @@ function Navbar() {
                     </div>
                 </div>
 
-
-                        <nav className="navbar navbar-expand-md dark-background navbar-dark">
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="collapsibleNavbar">
-                                <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                        <Link to="/entrenamientos">
-                                            <h5 className="puntero encima ">Entrenamientos</h5>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to="/reservas">
-                                            <h5 className="puntero encima ">Reservas</h5>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to="/SobreNosotros">
-                                            <h5 className="puntero encima ">Sobre Nosotros</h5>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to="/Torneos">
-                                            <h5 className="puntero encima ">Torneos</h5>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item derecha">
-                                        {Botones}
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-
-
                 <div className="col-12 sticky-top top-0 dark-background text-white">
                     <div className="row">
                         <div className="col-6">
                             <nav className="navbar sticky-top navbar-expand-sm dark-background text-white">
-                                <div className="col-4 offset-1">
+                                <div className="col-12 col-md-3 espacio">
                                     <div className="row">
                                         <Link to="/entrenamientos">
                                             <h5 className="puntero encima">Entrenamientos</h5>
@@ -150,7 +114,7 @@ function Navbar() {
                                     </div>
                                 </div>
 
-                                <div className="col-4">
+                                <div className="col-12 col-md-3 espacio">
                                     <div className="row">
                                         <Link to="/reservas">
                                             <h5 className="puntero encima ">Reservas</h5>
@@ -158,7 +122,15 @@ function Navbar() {
                                     </div>
                                 </div>
 
-                                <div className="col-4">
+                                <div className="col-12 col-md-3 espacio">
+                                    <div className="row">
+                                        <Link to="/Torneos">
+                                            <h5 className="puntero encima">Torneos</h5>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                <div className="col-12 col-md-3 espacio">
                                     <div className="row">
                                         <Link to="/SobreNosotros">
                                             <h5 className="puntero encima ">Sobre Nosotros</h5>
@@ -168,15 +140,15 @@ function Navbar() {
 
                             </nav>
                         </div>
-                        <div className=" offset-4 col-2">
-                            <div className="row  justify-content-end">
+                        <div className="col-12 col-md-2 offset-md-4 ">
+                            <div className="row">
                                 {Botones}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>)
+        </div>)
 }
 
 export default Navbar;
