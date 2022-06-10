@@ -82,7 +82,7 @@ function Registro() {
                                     </div>
 
                                     <div className="form-group mb-3">
-                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-primary">Register</button>}
+                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-dark custom-btn">Register</button>}
                                     </div>
                                 </form>
                             </div>
