@@ -75,9 +75,8 @@ export default function InfoModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Editar Perfil
-      </Button>
+      
+      <button className="btn btn-light custom-btn" onClick={handleShow}>Editar Perfil</button>
 
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
