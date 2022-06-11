@@ -11,6 +11,7 @@ import flechas from "../../imagenes/flechas.png";
 import { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
+import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
 
 function Entrenamientos() {
     const [buscando, setBuscando] = useState(false);
@@ -192,7 +193,7 @@ function Entrenamientos() {
                                     <span>{mensajeInput.error_list.mensaje}</span>
                                 </div>
                                 <div className="form-group mb-3">
-                                    <button type="submit" className="btn btn-light custom-btn">Enviar</button>
+                                    {buscando?<AjaxLoader/>:<button type="submit" className="btn btn-light custom-btn">Enviar</button>}
                                 </div>
                             </form>
 

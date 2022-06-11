@@ -2,7 +2,6 @@ import React from 'react';
 import '../../Paginas/Torneos/Torneos.css';
 
 const Torneo = (props) => {
-    console.log(props.torneo);
     return (
         <div className="col-12 pt-4 pb-4">
 

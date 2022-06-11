@@ -17,15 +17,21 @@ const Pistas = () => {
     const [value, onChange] = useState(new Date());
     const [hora, setHora] = useState();
     const [show, setShow] = useState(false);
-    const [form, setForm] = useState();
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
-    const date = new Date();
-    date.setDate(date.getDate() + 30);
     const [cerrado, setCerrado] = useState(true);
+
+    const handleClose = () => setShow(false);
+
+    const date = new Date();
+    const mes = date.getMonth()+1;
+    date.setDate(date.getDate() + 30);
+
+    const calendario = document.getElementById("myCalendar");
+    const pistasHoras = document.getElementById("myform2");
+    const popUpReserva = document.getElementById("myForm3");
+    
     function obtenerPista(value) {
         setCerrado(false);
-        getPistaById(value.getDate(), numeroPista).then(pista => {
+        getPistaById(value.getDate(), numeroPista,mes).then(pista => {
             setPista(pista);
         });
     }
@@ -43,13 +49,12 @@ const Pistas = () => {
     }
 
     function abrirForm() {
-        if (document.getElementById("myform2").getAttribute("class").includes("d-none") && document.getElementById("myform2") !== null) {
+        if (pistasHoras.getAttribute("class").includes("d-none") && pistasHoras !== null) {
+
             const botonesHoras = document.getElementById("horas").querySelectorAll('button');
-            console.log(botonesHoras);
-            document.getElementById("myform2").classList.remove("d-none");
-            console.log(document.getElementById("myform2").classList)
-            document.getElementById("myCalendar").setAttribute("class", "d-none");
-            console.log(document.getElementById("myCalendar").classList)
+            pistasHoras.classList.remove("d-none");
+            calendario.setAttribute("class", "d-none");
+
             for (let i = 0; i < botonesHoras.length; i++) {
                 if (botonesHoras[i].getAttribute("class").includes("btn-danger")) {
                     botonesHoras[i].removeAttribute("class", "btn-danger");
@@ -66,13 +71,13 @@ const Pistas = () => {
     }
 
     function atras() {
-        document.getElementById("myform2").setAttribute("class", "d-none");
-        document.getElementById("myCalendar").classList.remove("d-none");
+        pistasHoras.setAttribute("class", "d-none");
+        calendario.classList.remove("d-none");
     }
 
     function atrasHoras() {
-        document.getElementById("myForm3").setAttribute("class", "d-none");
-        document.getElementById("myform2").classList.remove("d-none");
+        popUpReserva.setAttribute("class", "d-none");
+        pistasHoras.classList.remove("d-none");
     }
 
     function botones() {
@@ -82,15 +87,11 @@ const Pistas = () => {
     }
 
     function test(event) {
+        event.preventDefault();
         setHora(event.target.id);
-        console.log(document.getElementById("myForm3").classList.value);
-        if (document.getElementById("myForm3").classList.value === 'd-none' && document.getElementById("myForm3") !== null) {
-            console.log("salda");
-            console.log(document.getElementById("myForm3").classList);
-            document.getElementById("myForm3").classList.remove("d-none");
-            console.log(document.getElementById("myForm3").classList);
-
-            document.getElementById("myform2").setAttribute("class", "d-none");
+        if (popUpReserva.classList.value === 'd-none' && popUpReserva !== null) {
+            popUpReserva.classList.remove("d-none");
+            pistasHoras.setAttribute("class", "d-none");
         }
     }
 
@@ -100,7 +101,7 @@ const Pistas = () => {
         const data = {
             pista: numeroPista,
             dia: value.getDate(),
-            mes: value.getMonth(),
+            mes: mes,
             hora: hora,
         }
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/store`, data).then(res => {
@@ -115,8 +116,6 @@ const Pistas = () => {
                     setShow(false);
 
                 });
-            } else {
-                console.log(res.data)
             }
         });
     }

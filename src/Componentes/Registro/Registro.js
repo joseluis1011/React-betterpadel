@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Registro = (props) => {
-    console.log(props);
     return (
         <tr>
             <td>{props.registro.user_id.email}</td>

@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export function getPistaById(value, numeroPista) {
-  const apiURL = `http://betterpadel.atwebpages.com/betterpadel/public/api/show/${value}/${numeroPista}`;
+export function getPistaById(value, numeroPista,mes) {
+  console.log(mes);
+  const apiURL = `http://betterpadel.atwebpages.com/betterpadel/public/api/show/${value}/${numeroPista}/${mes}`;
   return axios.get(apiURL)
     .then(response => {
       return response.data.pista;

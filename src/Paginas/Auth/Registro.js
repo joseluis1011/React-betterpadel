@@ -40,7 +40,7 @@ function Registro() {
             if (res.data.status === 200) {
                 localStorage.setItem('auth_token',res.data.token);
                 swal({
-                    title: "Succes", text: res.data.message, type:
+                    title: "Success", text: res.data.message, type:
                         "success",
                     icon: "success"
                 }).then(function () {

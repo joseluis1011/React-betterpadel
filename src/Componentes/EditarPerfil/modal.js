@@ -41,7 +41,6 @@ export default function InfoModal() {
       lado: editarPerfil.lado,
       telefono: editarPerfil.telefono,
     }
-    console.log(editarPerfil.lado)
     if (editarPerfil.name === "" && editarPerfil.password === "" && editarPerfil.lado === "" && editarPerfil.telefono === "") {
       swal("Warning", "Los datos estan vacíos", "warning");
     } else if (editarPerfil.telefono !== '' && !telefonoTest.test(editarPerfil.telefono)) {
@@ -53,11 +52,10 @@ export default function InfoModal() {
     } else {
 
       axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/editarperfil`, data).then(res => {
-        console.log(res.data);
 
         if (res.data.status === 200) {
           swal({
-            title: "Succes", text: res.data.message, type:
+            title: "Success", text: res.data.message, type:
               "success",
             icon: "success"
           }).then(function () {

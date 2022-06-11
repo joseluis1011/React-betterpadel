@@ -1,6 +1,6 @@
-import axios from "axios";
-import { useNavigate } from "react-router";
-import swal from "sweetalert";
+//import axios from "axios";
+//import { useNavigate } from "react-router";
+//import swal from "sweetalert";
 import { Link } from "wouter";
 import logo from '../imagenes/logo.png';
 import './Navbar.css';
@@ -10,9 +10,9 @@ import facebook from "../imagenes/facebook.png";
 
 function Navbar() {
 
-    const Navigate = useNavigate();
+    //const Navigate = useNavigate();
 
-    const logout = (event) => {
+    /*const logout = (event) => {
         event.preventDefault();
 
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/logout`).then(res => {
@@ -30,7 +30,7 @@ function Navbar() {
                 swal("Warning", res.data.message, "warning");
             }
         });
-    }
+    }*/
     let Botones = '';
 
     if (localStorage.getItem('auth_token') === null) {

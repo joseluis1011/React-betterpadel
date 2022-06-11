@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Navbar from "../../Layouts/Navbar";
 import swal from "sweetalert";
 import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
-import Footer from "../../Layouts/Footer";
 import { Tab } from "react-bootstrap";
 import Tabs from 'react-bootstrap/Tabs'
 import { getAllUsers } from "../../Servicios/getAllUsers";
@@ -33,8 +32,6 @@ function Dashboard() {
         
     }
     
-    console.log(users)
-    console.log(registros.data);
     function user(user) {
         return <User key={user.id} user={user}></User>
     }

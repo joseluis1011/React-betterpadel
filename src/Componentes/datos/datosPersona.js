@@ -2,7 +2,6 @@ import React from 'react';
 
 const datosPersona = (props) => {
     function ladoExist() {
-        console.log(props.post.lado)
         if (props.post.lado) {
             return (
                 <div>
@@ -11,10 +10,12 @@ const datosPersona = (props) => {
                 </div>
             );
         }else{
-            <div>
-                <h5 className="card-title">Lado Bueno</h5>
-                <p className="card-text">Desconocido</p>
-            </div>
+            return ( 
+                <div>
+                    <h5 className="card-title">Lado Bueno</h5>
+                    <p className="card-text">Desconocido</p>
+                </div>
+            );
         }
     }
     return (
