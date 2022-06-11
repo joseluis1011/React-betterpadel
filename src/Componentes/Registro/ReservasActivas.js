@@ -36,7 +36,7 @@ const ReservaActiva = (props) => {
             <td>{props.reservaActiva.mes}</td>
             <td>{props.reservaActiva.hora}</td>
             <td>
-                {buscando?<AjaxLoader/>:<button className="btn btn-danger" onClick={deleteReserva}>Eliminar</button>}
+                {buscando?<AjaxLoader/>:<button className="btn btn-dark custom-btn" onClick={deleteReserva}>Eliminar</button>}
             </td>
         </tr>
     )

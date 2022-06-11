@@ -114,12 +114,8 @@ export default function InfoModal() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="outline-success" onClick={onSubmit}>
-            Save Changes
-          </Button>
+          <button className="btn btn-dark custom-btn" onClick={handleClose}>Cerrar</button>
+          <button className="btn btn-dark custom-btn" onClick={onSubmit}>Guardar cambios</button>
         </Modal.Footer>
       </Modal>
     </>
