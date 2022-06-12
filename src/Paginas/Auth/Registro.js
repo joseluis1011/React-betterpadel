@@ -66,7 +66,7 @@ function Registro() {
                     <div className="col-md-6">
                         <div className="card">
                             <div className="card-header">
-                                <h4>Register</h4>
+                                <h4>Registro</h4>
                             </div>
                             <div className="card-body">
                                 <form onSubmit={registerSubmit}>
@@ -92,7 +92,7 @@ function Registro() {
                                     </div>
 
                                     <div className="form-group mb-3">
-                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-dark custom-btn">Register</button>}
+                                    {buscando ? <AjaxLoader/>:<button type="submit" className="btn btn-dark custom-btn">Registro</button>}
                                     </div>
                                 </form>
                             </div>
