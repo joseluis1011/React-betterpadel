@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import AjaxLoader from '../AjaxLoader/AjaxLoader';
 
 const TorneoDasboard = (props) => {
-    console.log(props);
+
     const [buscando, setBuscando] = useState(false);
 
     function deleteTorneo() {

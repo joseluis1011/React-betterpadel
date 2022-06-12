@@ -53,8 +53,6 @@ const Torneo = (props) => {
                     setShow(false);
 
                 });
-            }else{
-                console.log(res.data);
             }
         });
     }
