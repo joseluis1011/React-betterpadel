@@ -23,7 +23,6 @@ const Torneo = (props) => {
     }
     useEffect(obtenerTorneos, []);
     useEffect(mapeo, [torneosApuntado]);
-
     function desabilitarBoton(value) {
         if (value[0].id === props.torneo.id) {
             document.getElementById(props.torneo.id).disabled = true;

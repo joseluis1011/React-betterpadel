@@ -81,7 +81,8 @@ function Dashboard() {
     const [enviando, setEnviando] = useState(false);
 
     const [torneoInput, setTorneo] = useState({
-        image: '',
+        dia: '',
+        mes: '',
         title: '',
         description: '',
         error_list: [],
@@ -96,7 +97,8 @@ function Dashboard() {
         event.preventDefault();
 
         const data = {
-            image: torneoInput.image,
+            dia: torneoInput.dia,
+            mes: torneoInput.mes,
             title: torneoInput.title,
             description: torneoInput.description
         }
@@ -110,6 +112,12 @@ function Dashboard() {
                         "success",
                     icon: "success"
                 });
+                setTorneo(
+                    {dia: '',
+                    mes: '',
+                    title: '',
+                    description: '',
+                    error_list: []})
             } else {
                 setTorneo({ ...torneoInput, error_list: res.data.validation_errors });
             }
@@ -141,16 +149,20 @@ function Dashboard() {
                                                             <span>{torneoInput.error_list.title}</span>
                                                         </div>
                                                         <div className="form-group mb-3">
+                                                            <label>Dia</label>
+                                                            <input type="" name="dia" onChange={handleInput} value={torneoInput.dia} className="form-control" />
+                                                            <span>{torneoInput.error_list.title}</span>
+                                                        </div>
+                                                        <div className="form-group mb-3">
+                                                            <label>Mes</label>
+                                                            <input type="" name="mes" onChange={handleInput} value={torneoInput.mes} className="form-control" />
+                                                            <span>{torneoInput.error_list.title}</span>
+                                                        </div>
+                                                        <div className="form-group mb-3">
                                                             <label>Description</label>
                                                             <textarea rows="3" name="description" onChange={handleInput} value={torneoInput.description} className="form-control" />
                                                             <span>{torneoInput.error_list.description}</span>
                                                         </div>
-                                                        <div className="custom-file">
-                                                            <input type="file" name="image" className="custom-file-input" id="customFileLang" onChange={handleInput} value={torneoInput.image} lang="es"></input>
-                                                            <label className="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
-                                                            <span>{torneoInput.error_list.image}</span>
-                                                        </div>
-
                                                         <div className="form-group mb-3">
                                                             {enviando ? <AjaxLoader /> : <button type="submit" className="btn btn-primary">Crear</button>}
                                                         </div>
