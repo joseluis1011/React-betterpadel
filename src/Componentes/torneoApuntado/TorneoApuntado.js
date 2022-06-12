@@ -32,10 +32,9 @@ console.log(props)
     return (
         <tr>
             <td>{props.torneo[0].title}</td>
-            <td>{props.torneo[0].dia}</td>
-            <td>{props.torneo[0].mes}</td>
+            <td>{props.torneo[0].dia + "/" + props.torneo[0].mes}</td>
             <td>
-                {buscando?<AjaxLoader/>:<button className="btn btn-danger" onClick={deleteReserva}>Eliminar</button>}
+                {buscando?<AjaxLoader/>:<button className="btn btn-dark custom-btn" onClick={deleteReserva}>Eliminar</button>}
             </td>
         </tr>
     )

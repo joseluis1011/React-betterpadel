@@ -181,7 +181,7 @@ const Pistas = () => {
                                                 </div>
                                                 <div className="form-group mb-3">
                                                     <label>Coste</label>
-                                                    <input type="" name="pista" value={numeroPista==="1"?"20":"15"} className="form-control" disabled />
+                                                    <input type="" name="pista" value={numeroPista==="1"?"20":"16"} className="form-control" disabled />
                                                 </div>
                                                 <div className="form-group mb-3">
                                                     <button type="submit" className="btn btn-dark custom-btn">Reservar</button>

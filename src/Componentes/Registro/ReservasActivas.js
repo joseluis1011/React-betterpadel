@@ -32,8 +32,7 @@ const ReservaActiva = (props) => {
     return (
         <tr>
             <td>{props.reservaActiva.pista}</td>
-            <td>{props.reservaActiva.dia}</td>
-            <td>{props.reservaActiva.mes}</td>
+            <td>{props.reservaActiva.dia + "/" + props.reservaActiva.mes}</td>
             <td>{props.reservaActiva.hora}</td>
             <td>
                 {buscando?<AjaxLoader/>:<button className="btn btn-dark custom-btn" onClick={deleteReserva}>Eliminar</button>}

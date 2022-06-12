@@ -104,7 +104,7 @@ const Profile = () => {
                 }
                 localStorage.removeItem('auth_token');
                 swal({
-                    title: "Succes", text: res.data.message, type:
+                    title: "Success", text: res.data.message, type:
                         "success",
                     icon: "success"
                 }).then(function () {
@@ -126,12 +126,12 @@ const Profile = () => {
 
                     <div className="col-12 pt-4 pb-4">
                         <div className="row">
-                            <div className="col-4 dark-background text-white pt-4 pb-4">
+                            <div className="col-12 col-md-4 dark-background text-white pt-4 pb-4">
                                 {datosPerfil}
                                 <InfoModal />
-                                <button className="btn btn-dark custom-btn" onClick={logout}>Logout</button>
+                                <button className="btn btn-dark custom-btn lado" onClick={logout}>Cerrar sesión</button>
                             </div>
-                            <div className="col-8">
+                            <div className="col-12 col-md-8">
                             <Tabs defaultActiveKey="ReservasActivas" id="uncontrolled-tab-example" className="mb-3">
                                 <Tab eventKey="Historial" title="Historial">
                                     <div className="col-12">
@@ -143,7 +143,6 @@ const Profile = () => {
                                                         <tr>
                                                             <th>Pista</th>
                                                             <th>Día</th>
-                                                            <th>Mes</th>
                                                             <th>Hora</th>
                                                         </tr>
                                                     </thead>
@@ -164,7 +163,6 @@ const Profile = () => {
                                                         <tr>
                                                             <th>Pista</th>
                                                             <th>Día</th>
-                                                            <th>Mes</th>
                                                             <th>Hora</th>
                                                         </tr>
                                                     </thead>
@@ -183,9 +181,8 @@ const Profile = () => {
                                                 <table className="table table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>Title</th>
+                                                            <th>Título</th>
                                                             <th>Día</th>
-                                                            <th>Mes</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -200,10 +197,6 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="fixed-bottom ">
-                <Footer />
-
             </div>
 
         </div>

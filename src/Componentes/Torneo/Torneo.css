@@ -1,0 +1,9 @@
+.borde{
+    border-style: solid;
+    border-width: 3px;
+    border-color: #ff1616 black  black #ff1616;
+}
+
+.medio{
+    float: right;
+}
