@@ -1,20 +1,110 @@
-import React from 'react';
+import Button from '@restart/ui/esm/Button';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Form, Modal } from 'react-bootstrap';
+import swal from 'sweetalert';
 import '../../Paginas/Torneos/Torneos.css';
+import { getAllTorneos } from '../../Servicios/getAllTorneos';
+import AjaxLoader from '../AjaxLoader/AjaxLoader';
 
 const Torneo = (props) => {
+    const [show, setShow] = useState(false);
+
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const [torneosApuntado, setTorneosApuntado] = useState([{}]);
+    const [buscando, setBuscando] = useState(false);
+    function obtenerTorneos() {
+        setBuscando(true);
+        getAllTorneos().then(registros => {
+            setTorneosApuntado(registros);
+            setBuscando(false);
+        });
+    }
+    useEffect(obtenerTorneos, []);
+    useEffect(mapeo, [torneosApuntado]);
+
+    function desabilitarBoton(value) {
+        if (value[0].id === props.torneo.id) {
+            document.getElementById(props.torneo.id).disabled = true;
+        }
+    }
+
+    function mapeo() {
+        if (torneosApuntado && torneosApuntado.Torneo) {
+            torneosApuntado.Torneo.map(desabilitarBoton);
+        }
+    }
+    function submitChanges() {
+        
+
+        const data = {
+            torneo_id: props.torneo.id,
+        }
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/store/userTorneo`, data).then(res => {
+            if (res.data.status === 200) {
+
+                swal({
+                    title: "Succes", text: res.data.message, type:
+                        "success",
+                    icon: "success"
+                }).then(function () {
+                    window.location.reload();
+                    setShow(false);
+
+                });
+            }else{
+                console.log(res.data);
+            }
+        });
+    }
     return (
         <div className="col-12 pt-4 pb-4">
-
             <div className="row">
-                <div className="col-6">
-                    <div className="row">
-                        <img src={props.torneo.image} alt="Entreno1" className="foto2" />
-                    </div>
-                </div>
-                <div className="col-6 align-self-center">
+                <div className="col-12 align-self-center">
                     <h1 className="textorojo pb-4">{props.torneo.title}</h1>
                     <h5 className="pb-4">{props.torneo.description}</h5>
-                    <button type="button" className="btn btn-lg btn-dark custom-btn">Apúntate</button>
+                    {buscando?<AjaxLoader/>:<button type="button" id={props.torneo.id} className="btn btn-lg btn-dark custom-btn" onClick={handleShow}>Apúntate</button>}
+                    <Modal show={show} onHide={handleClose} centered>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Apuntarse a Torneo</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <Form>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Título</Form.Label>
+                                    <Form.Control
+                                        autoFocus
+                                        value={props.torneo.title}
+                                        readOnly
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Fecha</Form.Label>
+                                    <Form.Control
+                                        type="string"
+                                        value={props.torneo.dia + " / " + props.torneo.mes}
+                                        readOnly/>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Precio</Form.Label>
+                                    <Form.Control
+                                        type="number"
+                                        value="40"
+                                        readOnly
+                                    />
+                                </Form.Group>
+                            </Form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                            <Button variant="outline-success" onClick={submitChanges}>
+                                Save Changes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
 
             </div>

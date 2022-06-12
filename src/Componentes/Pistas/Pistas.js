@@ -172,16 +172,16 @@ const Pistas = () => {
                                                     <input type="" name="hora" value={hora} className="form-control" disabled />
                                                 </div>
                                                 <div className="form-group mb-3">
-                                                    <label>Día</label>
-                                                    <input type="" name="dia" value={value.getDate()} className="form-control" disabled />
-                                                </div>
-                                                <div className="form-group mb-3">
-                                                    <label>Mes</label>
-                                                    <input type="" name="mes" value={value.getMonth()} className="form-control" disabled />
+                                                    <label> Fecha</label>
+                                                    <input type="" name="dia" value={value.getDate()+"/"+mes} className="form-control" disabled />
                                                 </div>
                                                 <div className="form-group mb-3">
                                                     <label>Numero de Pista</label>
                                                     <input type="" name="pista" value={numeroPista} className="form-control" disabled />
+                                                </div>
+                                                <div className="form-group mb-3">
+                                                    <label>Coste</label>
+                                                    <input type="" name="pista" value={numeroPista==="1"?"20":"15"} className="form-control" disabled />
                                                 </div>
                                                 <div className="form-group mb-3">
                                                     <button type="submit" className="btn btn-dark custom-btn">Reservar</button>

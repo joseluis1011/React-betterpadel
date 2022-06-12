@@ -13,16 +13,19 @@ import InfoModal from "../../Componentes/EditarPerfil/modal";
 import { Tab } from "react-bootstrap";
 import Tabs from 'react-bootstrap/Tabs'
 import ReservaActiva from "../../Componentes/Registro/ReservasActivas";
+import TorneoApuntado from "../../Componentes/torneoApuntado/TorneoApuntado";
+import { getAllTorneos } from "../../Servicios/getAllTorneos";
 const Profile = () => {
     const Navigate = useNavigate();
     const [historial, setHistorial] = useState([{}]);
     const [buscando, setBuscando] = useState(false);
     const [historialMap, setHistorialMap] = useState('');
     const [reservaActiva, setReservaActiva] = useState();
+    const [torneosApuntado, setTorneosApuntado] = useState([{}]);
+    const [torneosApuntadoMap, setTorneosApuntadoMap] = useState();
     const [datosPerfil, setDatosPerfil] = useState();
     const date = new Date();
 
-    let reservasActivas = [];
     function obtenerHistorial() {
 
         setBuscando(true);
@@ -34,7 +37,20 @@ const Profile = () => {
             setBuscando(false);
         });
     }
+    function obtenerTorneos() {
+
+        setBuscando(true);
+
+
+        getAllTorneos().then(registros => {
+            setTorneosApuntado(registros);
+
+            setBuscando(false);
+        });
+    }
+    useEffect(obtenerTorneos, []);
     useEffect(obtenerHistorial, []);
+    useEffect(mapeo3, [historial, torneosApuntado]);
     useEffect(mapeo, [historial]);
     useEffect(mapeo2, [historial]);
 
@@ -47,6 +63,15 @@ const Profile = () => {
     function datosPersona(post) {
         return <DatosPersona key={post.id} post={post}></DatosPersona>
     }
+    function torneoApuntado(torneo) {
+        return <TorneoApuntado key={torneo[0].id} torneo={torneo}></TorneoApuntado>
+    }
+
+    function mapeo3() {
+        if (torneosApuntado && torneosApuntado.Torneo) {
+            setTorneosApuntadoMap(torneosApuntado.Torneo.map(torneoApuntado));
+        }
+    }
 
     function comprobarReserva(post) {
         if (post.mes === date.getMonth()+1 && post.dia >= date.getDay()) {
@@ -55,7 +80,7 @@ const Profile = () => {
             return post;
         }
     }
-
+    
     function mapeo() {
         if (historial.registros) {
             setReservaActiva(historial.registros.filter(comprobarReserva).map(muestraReservaActiva));
@@ -74,6 +99,9 @@ const Profile = () => {
 
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/logout`).then(res => {
             if (res.data.status === 200) {
+                if (localStorage.getItem('admind')) {
+                    localStorage.removeItem('admind');
+                }
                 localStorage.removeItem('auth_token');
                 swal({
                     title: "Succes", text: res.data.message, type:
@@ -142,6 +170,26 @@ const Profile = () => {
                                                     </thead>
                                                     <tbody>
                                                         {reservaActiva}
+                                                    </tbody>
+                                                </table>
+                                            </div>}
+                                    </div>
+                                </Tab>
+                                <Tab eventKey="Torneos" title="Torneos Apuntado">
+                                    <div className="col-12">
+                                        {buscando ? <AjaxLoader></AjaxLoader>
+                                            : <div className="container">
+                                                <h2>Torneos Apuntado</h2>
+                                                <table className="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Title</th>
+                                                            <th>Día</th>
+                                                            <th>Mes</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {torneosApuntadoMap}
                                                     </tbody>
                                                 </table>
                                             </div>}

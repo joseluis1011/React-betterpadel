@@ -10,7 +10,6 @@ import SobreNosotros from './Paginas/SobreNosotros/SobreNosotros';
 import Pistas from './Componentes/Pistas/Pistas';
 import Torneos from './Paginas/Torneos/Torneos';
 import Dashboard from './Paginas/Dashboard/Dashboard';
-import ImageUpload from './Componentes/ImageUpload';
 axios.defaults.headers.post['Content-type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -24,8 +23,8 @@ function App() {
   return (
     <div className='contenido'>
       <Route
-        component={Dashboard}
         path="/Dashboard">
+          {localStorage.getItem('admind') ? <Dashboard />: <Redirect to='/' />}
       </Route>
       <Route
         component={Home}
@@ -47,7 +46,6 @@ function App() {
         path="/profile">
         {!localStorage.getItem('auth_token') ? <Login /> : <Profile />}
       </Route>
-        <Route path="/upload-image" component={ ImageUpload }/>
       <Route
         component={Entrenamientos}
         path="/entrenamientos">

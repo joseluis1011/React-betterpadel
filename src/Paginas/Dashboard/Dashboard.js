@@ -9,11 +9,26 @@ import { getAllUsers } from "../../Servicios/getAllUsers";
 import User from "../../Componentes/User/User";
 import { getAllregistros } from "../../Servicios/getAllregistros";
 import Registro from "../../Componentes/Registro/Registro";
+import { getAllMensajes } from "../../Servicios/getAllMensajes";
+import Mensaje from "../../Componentes/Registro/Mensaje";
+import ReservaActiva from "../../Componentes/Registro/ReservasActivas";
+
 function Dashboard() {
     const [users, setUsers] = useState([]);
     const [registros, setRegistros] = useState([]);
+    const [mensajes, setMensajes] = useState([]);
     const [buscando, setBuscando] = useState(false);
     const [registrosMap, setRegistrosMap] = useState();
+    const [reservaActiva,setReservaActiva] = useState();
+    const date = new Date();
+
+    function obtenerMensajes() {
+        setBuscando(true);
+        getAllMensajes().then(mensajes => {
+            setMensajes(mensajes);
+            setBuscando(false);
+        });
+    }
 
     function obtenerUsuarios() {
         setBuscando(true);
@@ -41,11 +56,27 @@ function Dashboard() {
     function mapeo() {
         if (registros.data) {
             setRegistrosMap(registros.data.map(registro));
+            setReservaActiva(registros.data.filter(comprobarReserva).map(muestraReservaActiva));
         }
+    }
+    function muestraReservaActiva(post) {
+        return <ReservaActiva key={post.id} reservaActiva={post}></ReservaActiva>
+    }
+    function comprobarReserva(post) {
+        if (post.mes === date.getMonth()+1 && post.dia >= date.getDay()) {
+            return post;
+        }else if (post.mes >= date.getMonth()+1) {
+            return post;
+        }
+    }
+
+    function mostrarMensaje(mensaje) {
+        return <Mensaje key={mensaje.id} mensaje={mensaje}></Mensaje>
     }
 
     useEffect(mapeo, [registros]);
     useEffect(obtenerUsuarios, []);
+    useEffect(obtenerMensajes, []);
     useEffect(obtenerRegistros, []);
     const [enviando, setEnviando] = useState(false);
 
@@ -114,7 +145,7 @@ function Dashboard() {
                                                             <textarea rows="3" name="description" onChange={handleInput} value={torneoInput.description} className="form-control" />
                                                             <span>{torneoInput.error_list.description}</span>
                                                         </div>
-                                                        <div class="custom-file">
+                                                        <div className="custom-file">
                                                             <input type="file" name="image" className="custom-file-input" id="customFileLang" onChange={handleInput} value={torneoInput.image} lang="es"></input>
                                                             <label className="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
                                                             <span>{torneoInput.error_list.image}</span>
@@ -156,7 +187,28 @@ function Dashboard() {
                                     </div>
                                 </div>
                             </Tab>
-                            <Tab eventKey="Registros" title="Registros" >
+                            <Tab eventKey="ReservasActivas" title="Reservas Activas">
+                                    <div className="col-12">
+                                        {buscando ? <AjaxLoader></AjaxLoader>
+                                            : <div className="container">
+                                                <h2>Reservas Activas</h2>
+                                                <table className="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Pista</th>
+                                                            <th>Día</th>
+                                                            <th>Mes</th>
+                                                            <th>Hora</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {reservaActiva}
+                                                    </tbody>
+                                                </table>
+                                            </div>}
+                                    </div>
+                                </Tab>
+                            <Tab eventKey="Registros" title="Registros">
                             <div className="container py-2">
                                     <div className="row justify-content-center">
                                         <div className="col-12">
@@ -174,6 +226,31 @@ function Dashboard() {
                                             </thead>
                                             <tbody>
                                                 {registrosMap}
+                                            </tbody>
+                                        </table>
+                                    </div>}
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                            <Tab eventKey="Mensajes" title="Mensajes" >
+                            <div className="container py-2">
+                                    <div className="row justify-content-center">
+                                        <div className="col-12">
+                                        {buscando ? <AjaxLoader></AjaxLoader>
+                                    : <div className="container">
+                                        <h2>Users</h2>
+                                        <table className="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Email</th>
+                                                    <th>Name</th>
+                                                    <th>Mensaje</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {mensajes.map(mostrarMensaje)}
                                             </tbody>
                                         </table>
                                     </div>}

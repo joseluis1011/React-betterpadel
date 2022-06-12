@@ -38,6 +38,9 @@ function Registro() {
 
         axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/register`, data).then(res => {
             if (res.data.status === 200) {
+                if (res.data.admind !== null) {
+                    localStorage.setItem('admind', true);
+                }
                 localStorage.setItem('auth_token',res.data.token);
                 swal({
                     title: "Success", text: res.data.message, type:
