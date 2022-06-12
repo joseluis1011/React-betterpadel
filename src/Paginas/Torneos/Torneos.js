@@ -10,6 +10,7 @@ import Torneo from "../../Componentes/Torneo/Torneo";
 function Torneos() {
     const [buscando, setBuscando] = useState(false);
     const [torneos, setTorneos] = useState([]);
+    const date = new Date();
 
     function obtenerTorneos() {
         setBuscando(true);
@@ -19,10 +20,19 @@ function Torneos() {
         });
         
     }
+    
     function muestraTorneo(torneo) {
         return <Torneo key={torneo.id} torneo={torneo}></Torneo>
     }
     useEffect(obtenerTorneos, []);
+
+    function comprobarTorneos(post) {         
+        if (post.mes === date.getMonth()+1 && post.dia >= date.getDay()) {             
+            return post;         
+        }else if (post.mes >= date.getMonth()+1) {            
+            return post;         
+        }     
+    }
 
     return (
         <div>
@@ -44,7 +54,7 @@ function Torneos() {
                         </div>
                     </div>
                     {buscando ? <AjaxLoader></AjaxLoader>
-                                    :torneos.map(muestraTorneo)}
+                                    :torneos.filter(comprobarTorneos).map(muestraTorneo)}
                 </div>
             </div>
             <Footer />

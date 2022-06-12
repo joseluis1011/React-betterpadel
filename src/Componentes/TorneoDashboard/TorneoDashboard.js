@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 import swal from 'sweetalert';
 import AjaxLoader from '../AjaxLoader/AjaxLoader';
 
-const TorneoApuntado = (props) => {
+const TorneoDasboard = (props) => {
+    console.log(props);
     const [buscando, setBuscando] = useState(false);
-    const deleteReserva = (event) => {
-        event.preventDefault();
+
+    function deleteTorneo() {
 
         const data = {
-            torneo_id: props.torneo[0].id,
+            id: props.torneo.id,
         }
-
         setBuscando(true);
 
-        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/destroy/userTorneo`, data).then(res => {
+        axios.post(`http://betterpadel.atwebpages.com/betterpadel/public/api/destroy/torneo`, data).then(res => {
 
             if (res.data.status === 200) {
                 swal({
@@ -31,13 +31,14 @@ const TorneoApuntado = (props) => {
     }
     return (
         <tr>
-            <td>{props.torneo[0].title}</td>
-            <td>{props.torneo[0].dia + "/" + props.torneo[0].mes}</td>
+            <td>{props.torneo.id}</td>
+            <td>{props.torneo.title}</td>
+            <td>{props.torneo.dia + "/" + props.torneo.mes}</td>
             <td>
-                {buscando?<AjaxLoader/>:<button className="btn btn-dark custom-btn" onClick={deleteReserva}>Eliminar</button>}
+                {buscando?<AjaxLoader/>:<button className="btn btn-dark custom-btn" onClick={deleteTorneo}>Eliminar</button>}
             </td>
         </tr>
     )
 }
 
-export default TorneoApuntado;
+export default TorneoDasboard;

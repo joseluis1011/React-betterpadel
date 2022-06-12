@@ -8,7 +8,6 @@ import AjaxLoader from "../../Componentes/AjaxLoader/AjaxLoader";
 import Post from "../../Componentes/Registro/Post";
 import DatosPersona from "../../Componentes/datos/datosPersona";
 import Navbar from "../../Layouts/Navbar";
-import Footer from "../../Layouts/Footer";
 import InfoModal from "../../Componentes/EditarPerfil/modal";
 import { Tab } from "react-bootstrap";
 import Tabs from 'react-bootstrap/Tabs'
@@ -69,10 +68,16 @@ const Profile = () => {
 
     function mapeo3() {
         if (torneosApuntado && torneosApuntado.Torneo) {
-            setTorneosApuntadoMap(torneosApuntado.Torneo.map(torneoApuntado));
+            setTorneosApuntadoMap(torneosApuntado.Torneo.filter(comprobarTorneo).map(torneoApuntado));
         }
     }
-
+    function comprobarTorneo(post) {
+        if (post[0].mes === date.getMonth()+1 && post[0].dia >= date.getDay()) {
+            return post;
+        }else if (post[0].mes >= date.getMonth()+1) {
+            return post;
+        }
+    }
     function comprobarReserva(post) {
         if (post.mes === date.getMonth()+1 && post.dia >= date.getDay()) {
             return post;
@@ -104,7 +109,7 @@ const Profile = () => {
                 }
                 localStorage.removeItem('auth_token');
                 swal({
-                    title: "Success", text: res.data.message, type:
+                    title: "Succes", text: res.data.message, type:
                         "success",
                     icon: "success"
                 }).then(function () {

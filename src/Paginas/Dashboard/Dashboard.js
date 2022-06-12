@@ -12,6 +12,8 @@ import Registro from "../../Componentes/Registro/Registro";
 import { getAllMensajes } from "../../Servicios/getAllMensajes";
 import Mensaje from "../../Componentes/Registro/Mensaje";
 import ReservaActiva from "../../Componentes/Registro/ReservasActivas";
+import { getTorneos } from "../../Servicios/getTorneos";
+import TorneoDashboard from "../../Componentes/TorneoDashboard/TorneoDashboard";
 
 function Dashboard() {
     const [users, setUsers] = useState([]);
@@ -20,6 +22,8 @@ function Dashboard() {
     const [buscando, setBuscando] = useState(false);
     const [registrosMap, setRegistrosMap] = useState();
     const [reservaActiva,setReservaActiva] = useState();
+    const [torneos, setTorneos] = useState([]);
+
     const date = new Date();
 
     function obtenerMensajes() {
@@ -46,7 +50,14 @@ function Dashboard() {
         });
         
     }
-    
+    function obtenerTorneos() {
+        setBuscando(true);
+        getTorneos().then(torneos => {
+            setTorneos(torneos);
+            setBuscando(false);
+        });
+        
+    }
     function user(user) {
         return <User key={user.id} user={user}></User>
     }
@@ -73,9 +84,12 @@ function Dashboard() {
     function mostrarMensaje(mensaje) {
         return <Mensaje key={mensaje.id} mensaje={mensaje}></Mensaje>
     }
-
+    function mostrarTorneos(torneo) {
+        return <TorneoDashboard key={torneo.id} torneo={torneo}></TorneoDashboard>
+    }
     useEffect(mapeo, [registros]);
     useEffect(obtenerUsuarios, []);
+    useEffect(obtenerTorneos, []);
     useEffect(obtenerMensajes, []);
     useEffect(obtenerRegistros, []);
     const [enviando, setEnviando] = useState(false);
@@ -164,7 +178,7 @@ function Dashboard() {
                                                             <span>{torneoInput.error_list.description}</span>
                                                         </div>
                                                         <div className="form-group mb-3">
-                                                            {enviando ? <AjaxLoader /> : <button type="submit" className="btn btn-primary">Crear</button>}
+                                                            {enviando ? <AjaxLoader /> : <button type="submit" className="btn btn-dark custom-btn">Crear</button>}
                                                         </div>
                                                     </form>
                                                 </div>
@@ -263,6 +277,31 @@ function Dashboard() {
                                             </thead>
                                             <tbody>
                                                 {mensajes.map(mostrarMensaje)}
+                                            </tbody>
+                                        </table>
+                                    </div>}
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                            <Tab eventKey="Torneos" title="Torneos" >
+                            <div className="container py-2">
+                                    <div className="row justify-content-center">
+                                        <div className="col-12">
+                                        {buscando ? <AjaxLoader></AjaxLoader>
+                                    : <div className="container">
+                                        <h2>Torneos</h2>
+                                        <table className="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Title</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {torneos.map(mostrarTorneos)}
                                             </tbody>
                                         </table>
                                     </div>}

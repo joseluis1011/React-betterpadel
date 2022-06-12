@@ -1,4 +1,3 @@
-import Button from '@restart/ui/esm/Button';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Form, Modal } from 'react-bootstrap';
@@ -35,6 +34,7 @@ const Torneo = (props) => {
             torneosApuntado.Torneo.map(desabilitarBoton);
         }
     }
+
     function submitChanges() {
         
 
